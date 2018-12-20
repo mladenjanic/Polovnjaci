@@ -1,3 +1,37 @@
+body {
+  color: #50514f;
+}
+
+.footer {
+  background-color: rgba(80, 81, 79, 1) !important;
+}
+
+footer {
+  color: antiquewhite !important;
+}
+
+.nav-link {
+  color: #f25f5c !important;
+  font-weight: bolder;
+}
+
+.nav-link:hover {
+  color: #50514f !important;
+}
+.pol {
+  visibility: hidden;
+}
+
+.navbar-brand {
+  background-image: url('../img/logo.png') !important;
+  background-position-y: 4px;
+  background-repeat: no-repeat;
+}
+
+.navbar-brand:hover {
+  background-image: url('../img/logo1.png') !important;
+}
+
 .btn-secondary {
   color: #fff !important; }
 
@@ -9,7 +43,9 @@ img {
 
 .navbar {
   opacity: 0.9;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  background-color: #ffe066 !important;
+ }
 
 .social a {
   margin-right: 0.4rem; }
