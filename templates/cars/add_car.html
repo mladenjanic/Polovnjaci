@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <h1>Add Car</h1>
+  <div class="select-style">
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{ car_form.as_p }}
+        <p><input type="submit" value="Register a car"></p>
+    </form>
+</div>
+{% endblock %}
+
+{% block js %}
+    {% include "js1.html" %}
+{% endblock %}

@@ -1,5 +1,10 @@
 body {
-  color: #50514f;
+  color: #2a2b29;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
 }
 
 .footer {
@@ -10,9 +15,9 @@ footer {
   color: antiquewhite !important;
 }
 
-.nav-link {
+a.nav-link {
   color: #f25f5c !important;
-  font-weight: bolder;
+  font-weight: 600 !important;
 }
 
 .nav-link:hover {
