@@ -7,10 +7,10 @@
         brands = {{ car_form.brands | safe}};
         populateBrand();
         $("#id_car_select").empty();
-        $("#id_car_select").append('<option value="" disabled selected>First select a brand</option>');
+        $("#id_car_select").append('<option value="" disabled selected>Prvo izaberi marku</option>');
         function populateBrand() {
             $('#id_brand_select').empty();
-            $("#id_brand_select").append('<option value="" disabled selected>Select your option</option>');
+            $("#id_brand_select").append('<option value="" disabled selected>Izaberi marku vozila</option>');
             $.each(brands, function(v) {
                 $('#id_brand_select')
                     .append($("<option></option>")
@@ -21,7 +21,7 @@
         function populateCar(event) {
             brand = $("#id_brand_select option:selected").text();
             $("#id_car_select").empty();
-            $("#id_car_select").append('<option value="" disabled selected>Select your option</option>');
+            $("#id_car_select").append('<option value="" disabled selected>Izaberi model</option>');
             for (let [b, bcars] of Object.entries(cars)) {
                 if (b == brand) {
                     //alert(b);

@@ -4,10 +4,10 @@
 {% block content %}
   <h1>Add Car</h1>
   <div class="select-style">
-    <form action="." method="POST">
+    <form action="{% url 'regcar' %}" method="post">
         {% csrf_token %}
         {{ car_form.as_p }}
-        <p><input type="submit" value="Register a car"></p>
+        <input type="submit" value="Postavi oglas" class="btn btn-success">
     </form>
 </div>
 {% endblock %}

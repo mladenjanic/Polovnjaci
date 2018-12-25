@@ -3,8 +3,8 @@ from . import views
 
 
 urlpatterns = [
-  path('', views.cars, name='cars'),
-  path('<int:id>', views.car, name='car'),
+  path('', views.fleets, name='cars'),
+  path('<int:id>', views.fleet, name='car'),
   path('search', views.search, name='search'),
   path('add', views.regcar, name='regcar')
 ]

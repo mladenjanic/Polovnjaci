@@ -10,16 +10,15 @@ class CustomUser(User):
   telefon = models.PositiveIntegerField()
 
 class Brand(models.Model):
-  user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-  company_name = models.CharField(max_length=200)
+  company_name = models.CharField(max_length=200, blank=True, null=True)
+  user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
   def __str__(self):
     return self.company_name
 
 class Car(models.Model):
   brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
-  user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-  name = models.CharField(max_length=200)
+  name = models.CharField(max_length=200, blank=True, null=True)
 
   def brand_name(self):
     return self.brand.company_name
@@ -28,8 +27,8 @@ class Car(models.Model):
     return self.name
 
 class Fleet(models.Model):
-  car = models.ForeignKey(Car, on_delete=models.CASCADE)
-  user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+  brand_name = models.ForeignKey(Brand, on_delete=models.CASCADE, blank=True, null=True)
+  car = models.ForeignKey(Car, on_delete=models.CASCADE, blank=True, null=True)
   obelezje = models.CharField(max_length=200)
   cena = models.PositiveIntegerField()
   opis = models.TextField(blank=True)
@@ -82,7 +81,7 @@ class Fleet(models.Model):
     return self.car.brand.company_name
 
   def __str__(self):
-    return self.obelezje
+    return self.car.brand.company_name + ' ' + self.car.name + ' ' + self.obelezje
 
 
 

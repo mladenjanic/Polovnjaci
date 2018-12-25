@@ -3,4 +3,11 @@
 
 {% block content %}
   <h1>Car Lists</h1>
+  {% if fleets %}
+    {% for fleet in fleets %}
+      <p>{{ fleet }}</p>
+    {% endfor %}
+  {% else %}
+    <p>Trenutno nema oglasa</p>
+  {% endif %}
 {% endblock %}
