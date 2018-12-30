@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
+{% load humanize %}
+
 
 {% block content %}
   <h1>Car Lists</h1>
   {% if fleets %}
     {% for fleet in fleets %}
-      <p>{{ fleet }}</p>
+      <p><a href="{% url 'car' fleet.id %}">{{ fleet }}</a></p>
     {% endfor %}
   {% else %}
     <p>Trenutno nema oglasa</p>

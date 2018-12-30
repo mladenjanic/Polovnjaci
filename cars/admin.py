@@ -11,9 +11,12 @@ class CarAdmin(admin.ModelAdmin):
   search_fields = ('name', 'brand__company_name')
   list_per_page = 25
 
+class BrandAdmin(admin.ModelAdmin):
+  ordering = ('company_name',)
 
 
-admin.site.register(Brand)
+
+admin.site.register(Brand, BrandAdmin)
 admin.site.register(Car, CarAdmin)
 admin.site.register(Fleet)
 

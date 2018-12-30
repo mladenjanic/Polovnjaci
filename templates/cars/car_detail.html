@@ -1,5 +1,26 @@
 {% extends 'base.html' %}
 
+{% load humanize %}
+
 {% block content %}
-  <h1>Car Details</h1>
+<div class="row justify-content-center mb-4">
+    <div class="col-8">
+      <h1 class="text-center">Car Details</h1>
+    </div>
+</div>
+  <div class="row">
+    <div class="col-6">
+      <img src="{{ fleet.photo1.url }}" alt="" class="car-photo">
+    </div>
+  
+  
+      <div class="col-6">
+          <p>Marka: {{ fleet.brand_name }}</p>
+          <p>Model: {{ fleet.car }}</p>
+          <p>Oznaka: {{ fleet.obelezje }}</p>
+          <p>Cena: {{ fleet.cena|intcomma }}&euro;</p>
+          <p>Oglas postavljen: {{ fleet.oglas_postavljen|naturaltime }}</p>
+      </div>
+  </div>
+  
 {% endblock %}

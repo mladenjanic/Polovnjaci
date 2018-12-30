@@ -27,6 +27,53 @@ class Car(models.Model):
     return self.name
 
 class Fleet(models.Model):
+
+  KAROSERIJA = (
+    ('Limuzina', 'Limuzina'),
+    ('Hečbek', 'Hečbek'),
+    ('Karavan', 'Karavan'),
+    ('Kupe', 'Kupe'),
+    ('Monovolumen', 'Monovolumen'),
+    ('Kabriolet', 'Kabriolet'),
+  )
+
+  GORIVO = (
+    ('Dizel', 'Dizel'),
+    ('Benzin', 'Benzin'),
+    ('Benzin + TNG', 'Benzin + TNG'),
+    ('Metan CNG', 'Metan CNG'),
+    ('Hibrid', 'Hibrid'),
+  )
+
+  BROJ_VRATA = (
+    ('2/3', '2/3'),
+    ('4/5', '4/5'),
+  )
+
+  BROJ_SEDISTA = (
+    ('2 sedista', '2 sedista'),
+    ('3 sedista', '3 sedista'),
+    ('4 sedista', '4 sedista'),
+    ('5 sedista', '5 sedista'),
+    ('6 sedista', '6 sedista'),
+    ('7 sedista', '7 sedista'),
+    ('8 sedista', '8 sedista'),
+  )
+
+  MENJAC = (
+    ('Manuelni 4 brzine', 'Manuelni 4 brzine'),
+    ('Manuelni 5 brzina', 'Manuelni 5 brzina'),
+    ('Manuelni 6 brzina', 'Manuelni 6 brzina'),
+    ('Poluautomatski', 'Poluautomatski'),
+    ('Automatski', 'Automatski'),
+  )
+
+  KLIMA = (
+    ('Nema klimu', 'Nema klimu'),
+    ('Manuelna klima', 'Manuelna klima'),
+    ('Automatska klima', 'Automatska klima'),
+  )
+
   brand_name = models.ForeignKey(Brand, on_delete=models.CASCADE, blank=True, null=True)
   car = models.ForeignKey(Car, on_delete=models.CASCADE, blank=True, null=True)
   obelezje = models.CharField(max_length=200)
@@ -40,20 +87,20 @@ class Fleet(models.Model):
   photo6 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True)
   photo7 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True)
   photo8 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True)
-  date = models.DateTimeField(default=datetime.now)
+  oglas_postavljen = models.DateTimeField(default=datetime.now)
   # Osnovne Informacije
   godiste = models.PositiveIntegerField()
-  karoserija = models.CharField(max_length=200)
-  gorivo = models.CharField(max_length=200)
+  karoserija = models.CharField(max_length=200, choices=KAROSERIJA)
+  gorivo = models.CharField(max_length=200, choices=GORIVO)
   kubikaza = models.PositiveIntegerField()
   # Karakteristike
   snaga_kw = models.PositiveIntegerField()
   kilometraza = models.PositiveIntegerField()
-  broj_vrata = models.PositiveIntegerField()
-  broj_sedista = models.PositiveIntegerField()
-  menjac = models.CharField(max_length=100)
+  broj_vrata = models.CharField(max_length=200, choices=BROJ_VRATA)
+  broj_sedista = models.CharField(max_length=200, choices=BROJ_SEDISTA)
+  menjac = models.CharField(max_length=200, choices=MENJAC)
   boja = models.CharField(max_length=100)
-  klima = models.CharField(max_length=100)
+  klima = models.CharField(max_length=100, choices=KLIMA)
   registrovan_do = models.DateField()
   # Sigurnost
   abs = models.BooleanField(default=False)

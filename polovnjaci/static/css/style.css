@@ -20,6 +20,10 @@ a.nav-link {
   font-weight: 600 !important;
 }
 
+.border-info {
+  border-color: #50514f !important;
+}
+
 .nav-link:hover {
   color: #50514f !important;
 }
