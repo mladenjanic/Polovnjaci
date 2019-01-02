@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% load humanize %}
 
 {% block content %}
@@ -8,9 +9,84 @@
       <h1 class="text-center">Car Details</h1>
     </div>
 </div>
-  <div class="row">
+  <div class="row"  id="slider">
     <div class="col-6">
-      <img src="{{ fleet.photo1.url }}" alt="" class="car-photo">
+      <div id="myCarousel" class="carousel slide">
+        <div class="carousel-inner mb-2">
+            <div class="active item carousel-item" data-slide-number="0">
+              <a href="{{fleet.photo1.url}}"><img src="{{fleet.photo1.url}}" class="img-fluid"></a>
+            </div>
+            <div class="item carousel-item" data-slide-number="1">
+              <a href="{{fleet.photo2.url}}"><img src="{{fleet.photo2.url}}" class="img-fluid"></a>
+            </div>
+            <div class="item carousel-item" data-slide-number="2">
+              <a href="{{fleet.photo3.url}}"><img src="{{fleet.photo3.url}}" class="img-fluid"></a>
+            </div>
+            <div class="item carousel-item" data-slide-number="3">
+              <a href="{{fleet.photo4.url}}"><img src="{{fleet.photo4.url}}" class="img-fluid"></a>
+            </div>
+            <div class="item carousel-item" data-slide-number="4">
+              <a href="{{fleet.photo5.url}}"><img src="{{fleet.photo5.url}}" class="img-fluid"></a>
+            </div>
+            <div class="item carousel-item" data-slide-number="5">
+              <a href="{{fleet.photo6.url}}"><img src="{{fleet.photo6.url}}" class="img-fluid"></a>
+            </div>
+            <div class="item carousel-item" data-slide-number="6">
+              <a href="{{fleet.photo7.url}}"><img src="{{fleet.photo7.url}}" class="img-fluid"></a>
+            </div>
+            <div class="item carousel-item" data-slide-number="7">
+              <a href="{{fleet.photo8.url}}"><img src="{{fleet.photo8.url}}" class="img-fluid"></a>
+            </div>
+
+            <a class="carousel-control-prev pt-3" href="#myCarousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+            <a class="carousel-control-next pt-3" href="#myCarousel" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+
+        </div>
+
+
+        <ul class="carousel-indicators list-inline">
+            <li class="list-inline-item active">
+                <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
+                    <img src="{{fleet.photo1.url}}" class="img-fluid">
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a id="carousel-selector-1" data-slide-to="1" data-target="#myCarousel">
+                    <img src="{{fleet.photo2.url}}" class="img-fluid">
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a id="carousel-selector-2" data-slide-to="2" data-target="#myCarousel">
+                    <img src="{{fleet.photo3.url}}" class="img-fluid">
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a id="carousel-selector-3" data-slide-to="3" data-target="#myCarousel">
+                    <img src="{{fleet.photo4.url}}" class="img-fluid">
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a id="carousel-selector-4" data-slide-to="4" data-target="#myCarousel">
+                    <img src="{{fleet.photo5.url}}" class="img-fluid">
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a id="carousel-selector-5" data-slide-to="5" data-target="#myCarousel">
+                    <img src="{{fleet.photo6.url}}" class="img-fluid">
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a id="carousel-selector-6" data-slide-to="6" data-target="#myCarousel">
+                    <img src="{{fleet.photo7.url}}" class="img-fluid">
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a id="carousel-selector-7" data-slide-to="7" data-target="#myCarousel">
+                    <img src="{{fleet.photo8.url}}" class="img-fluid">
+                </a>
+            </li>
+        </ul>
+      </div>
     </div>
   
   
