@@ -127,6 +127,9 @@ class Fleet(models.Model):
   def brand(self):
     return self.car.brand.company_name
 
+  def snaga_ks(self):
+    return self.snaga_kw * 1.36
+
   def __str__(self):
     return self.car.brand.company_name + ' ' + self.car.name + ' ' + self.obelezje
 

@@ -4,6 +4,7 @@ body {
 }
 
 h1, h2, h3, h4 {
+  color: #50514f;
   font-weight: 600;
 }
 
@@ -21,7 +22,7 @@ a.nav-link {
 }
 
 .border-info {
-  border-color: #50514f !important;
+  border-color: #f25f5c !important;
 }
 
 .nav-link:hover {
@@ -49,6 +50,12 @@ img {
 
 .logo {
   width: 80px; }
+
+#myCarousel {
+  border: 2px solid #70c1b3;
+  border-radius: 5px;
+  padding: 5px 5px 0 5px;
+}
 
 #myCarousel .list-inline {
   white-space:nowrap;
@@ -82,8 +89,37 @@ img {
   background-color: #ffe066 !important;
  }
 
+.cena {
+  width: 40%;
+  padding-left: 0;
+}
+
+.price {
+  position: relative;
+  text-align: left;
+}
+
+.price-num {
+  background-image: url('../img/price.png');
+  background-repeat: no-repeat;
+  background-size: 25%;
+  padding: 12px 10px 10px 15px;
+  color: #ffe066;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.segment-title {
+  color: #f25f5c;
+}
+
+.separator {
+  border-top: 1px solid #f25f5c;
+}
+
 .social a {
   margin-right: 0.4rem; }
+
 
 #showcase {
   background: url(../img/showcase.jpg) no-repeat top center fixed/cover;

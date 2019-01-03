@@ -4,13 +4,15 @@
 {% load humanize %}
 
 {% block content %}
-<div class="row justify-content-center mb-4">
+<div class="row justify-content-center mb-2">
     <div class="col-8">
-      <h1 class="text-center">Car Details</h1>
+      <h1 class="text-center">{{ fleet }}</h1>
     </div>
 </div>
+<hr>
   <div class="row"  id="slider">
-    <div class="col-6">
+    <div class="col-lg-6 col-sm-12">
+      {% if fleet.photo1 or fleet.photo2 or fleet.photo3 or fleet.photo4 or fleet.photo5 or fleet.photo6 or fleet.photo7 or fleet.photo8 %}
       <div id="myCarousel" class="carousel slide">
         <div class="carousel-inner mb-2">
             <div class="active item carousel-item" data-slide-number="0">
@@ -86,16 +88,93 @@
                 </a>
             </li>
         </ul>
+      
       </div>
+      {% else %}
+        <img src="{% static 'img/no_photo.png' %}" alt="" class="rounded">
+      {% endif %}
     </div>
   
   
-      <div class="col-6">
-          <p>Marka: {{ fleet.brand_name }}</p>
-          <p>Model: {{ fleet.car }}</p>
-          <p>Oznaka: {{ fleet.obelezje }}</p>
-          <p>Cena: {{ fleet.cena|intcomma }}&euro;</p>
-          <p>Oglas postavljen: {{ fleet.oglas_postavljen|naturaltime }}</p>
+      <div class="col-lg-6 col-sm-12">
+          <p class="price-num mb-5">{{fleet.cena|intcomma }} &euro;</p>
+          <p><b>Marka:</b> {{ fleet.brand_name }}</p>
+          <p><b>Model:</b> {{ fleet.car }}</p>
+          <p><b>Godiste:</b> {{ fleet.godiste }}</p>
+          <p><b>Predjeno km:</b> {{ fleet.kilometraza|intcomma }}</p>
+          <p><b>Vrsta goriva:</b> {{ fleet.gorivo }}</p>
+          <p><b>Zapremina (cm<sup>3</sup>):</b> {{ fleet.kubikaza }}</p>
+          <p><b>Snaga (KW/KS):</b> {{ fleet.snaga_kw }}/{{ fleet.snaga_ks|floatformat:"0" }}</p>
+          <p><b>Oglas postavljen:</b> {{ fleet.oglas_postavljen|naturaltime }}</p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 mt-4">
+      <h3 class="segment-title">Karakteristike vozila</h3>
+      <hr class="separator">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-lg-6">
+      <p><b>Broj vrata:</b> {{ fleet.broj_vrata }} vrata</p>
+      <p><b>Broj sedista:</b> {{ fleet.broj_sedista }}</p>
+      <p><b>Menjac:</b> {{ fleet.menjac }}</p>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <p><b>Boja:</b> {{ fleet.boja|title }}</p>
+        <p><b>Klima:</b> {{ fleet.klima }}</p>
+        <p><b>Registrovan do:</b> {{ fleet.registrovan_do }}</p>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-12 mt-4">
+        <h3 class="segment-title">Sigurnost</h3>
+        <hr class="separator">
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-12 col-lg-6">
+        <p><b>Airbag vozac:</b> {% if fleet.airbag_vozac %}Da{% else %}Ne{% endif %}</p>
+        <p><b>Abs:</b> {% if fleet.abs %}Da{% else %}Ne{% endif %}</p>
+        <p><b>Esp:</b> {% if fleet.esp %}Da{% else %}Ne{% endif %}</p>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+          <p><b>Airbag suvozac:</b> {% if fleet.airbag_suvozac %}Da{% else %}Ne{% endif %}</p>
+          <p><b>Alarm:</b> {% if fleet.alarm %}Da{% else %}Ne{% endif %}</p>
+          <p><b>Centralno zakljucavanje:</b> {% if fleet.centralno_zakljucavanje %}Da{% else %}Ne{% endif %}</p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-12 mt-4">
+        <h3 class="segment-title">Oprema</h3>
+        <hr class="separator">
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-12 col-lg-6">
+        <p><b>Tempomat:</b> {% if fleet.tempomat %}Da{% else %}Ne{% endif %}</p>
+        <p><b>Putni racunar:</b> {% if fleet.putni_racunar %}Da{% else %}Ne{% endif %}</p>
+        <p><b>Metalik boja:</b> {% if fleet.metalik_boja %}Da{% else %}Ne{% endif %}</p>
+        <p><b>Navigacija:</b> {% if fleet.navigacija %}Da{% else %}Ne{% endif %}</p>
+        <p><b>Svetla za maglu:</b> {% if fleet.svetla_za_maglu %}Da{% else %}Ne{% endif %}</p>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+          <p><b>Siber:</b> {% if fleet.siber %}Da{% else %}Ne{% endif %}</p>
+          <p><b>Alu felne:</b> {% if fleet.alu_felne %}Da{% else %}Ne{% endif %}</p>
+          <p><b>DPF:</b> {% if fleet.dpf %}Da{% else %}Ne{% endif %}</p>
+          <p><b>Kuka za vucu:</b> {% if fleet.kuka %}Da{% else %}Ne{% endif %}</p>
+          <p><b>Kamera za voznju unazad:</b> {% if fleet.kamera %}Da{% else %}Ne{% endif %}</p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-12 mt-4">
+        <h3 class="segment-title">Opis</h3>
+        <hr class="separator">
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-12">
+        <p>{{ fleet.opis }}</p>
       </div>
   </div>
   

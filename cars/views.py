@@ -38,6 +38,8 @@ def regcar(request):
     car_form = RegCarForm(user = User.objects.get(id=request.user.id))
   return render(request, 'cars/add_car.html', {'car_form': car_form})
 
+  
+
 
 
 
