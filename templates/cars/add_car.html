@@ -7,7 +7,7 @@
         <div class="col-8">
             <h1 class="mt-2 mb-5 text-center">Dodaj Oglas</h1>
             <hr class="mt-0 mb-5">
-            <form action="{% url 'regcar' %}" method="post">
+            <form action="{% url 'regcar' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-6">
@@ -164,6 +164,7 @@
                 </div>
                 <hr>
                 {{ car_form.oglas_postavljen|as_crispy_field }}
+                {{ car_form.user|as_crispy_field }}
                 {{ car_form.opis|as_crispy_field }}
                 <hr class="mt-5 mb-5">
                 <input type="submit" value="Postavi oglas" class="btn btn-success">

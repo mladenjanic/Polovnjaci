@@ -21,6 +21,8 @@ a.nav-link {
   font-weight: 600 !important;
 }
 
+
+
 .border-info {
   border-color: #f25f5c !important;
 }
@@ -31,6 +33,11 @@ a.nav-link {
 .pol {
   visibility: hidden;
 }
+
+img.upload-img {
+  height: 359px !important;
+}
+
 
 .navbar-brand {
   background-image: url('../img/logo.png') !important;
@@ -120,6 +127,166 @@ img {
 .social a {
   margin-right: 0.4rem; }
 
+.listcar {
+  border: 1px solid #d0d4ca !important;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.listcar-price {
+  color: #f25f5c;
+  font-weight: bold;
+}
+
+label.col-form-label[for='id_photo1'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #f25f5c !important;
+  font-weight: bold;
+  border:2px solid #f25f5c;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo2'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #f25f5c !important;
+  font-weight: bold;
+  border:2px solid #f25f5c;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo3'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #f25f5c !important;
+  font-weight: bold;
+  border:2px solid #f25f5c;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo4'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #f25f5c !important;
+  font-weight: bold;
+  border:2px solid #f25f5c;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo5'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #f25f5c !important;
+  border:2px solid #f25f5c;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo6'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #f25f5c !important;
+  border:2px solid #f25f5c;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo7'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #f25f5c !important;
+  border:2px solid #f25f5c;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo8'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #f25f5c !important;
+  border:2px solid #f25f5c;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+
+input[type='file']{
+  display: none;
+}
 
 #showcase {
   background: url(../img/showcase.jpg) no-repeat top center fixed/cover;

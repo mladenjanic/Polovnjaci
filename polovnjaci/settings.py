@@ -107,6 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'cars.User'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -120,6 +122,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOGOUT_REDIRECT_URL = '/cars'
+LOGIN_REDIRECT_URL = '/cars'
+
 
 
 # Static files (CSS, JavaScript, Images)

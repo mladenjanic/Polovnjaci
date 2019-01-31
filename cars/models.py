@@ -1,13 +1,111 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from datetime import datetime
 
 
-class CustomUser(User):
-  mesto = models.CharField(max_length=200)
-  postanski_broj = models.PositiveIntegerField()
-  adresa = models.CharField(max_length=200)
-  telefon = models.PositiveIntegerField()
+# class Profile(models.Model):
+#   user = models.OneToOneField(User, on_delete=models.CASCADE)
+#   location = models.CharField(max_length=100, blank=True)
+#   address = models.CharField(max_length=100, blank=True)
+#   zipcode = models.PositiveIntegerField(blank=True)
+#   phone = models.CharField(max_length=15, blank=True)
+#   is_staff = models.BooleanField(default=False)
+
+#   def __str__(self):
+#     return self.user.username
+
+
+class UserManager(BaseUserManager):
+  def create_user(self, email, password=None, is_active=True, is_staff=False,       is_admin=False):
+    if not email:
+      raise ValueError("Mora biti uneta email adresa")
+    if not password:
+      raise ValueError("Mora biti uneta sifra")
+    user_obj = self.model(
+      email = self.normalize_email(email)
+    )
+    user_obj.set_password(password)
+    user_obj.staff = is_staff
+    user_obj.admin = is_admin
+    user_obj.active = is_active
+    user_obj.save(using=self._db)
+    return user_obj
+
+  def create_staffuser(self, email, password=None):
+    user = self.create_user(
+      email,
+      password=password,
+      is_staff=True
+    )
+    return user
+
+  def create_superuser(self, email, password=None):
+    user = self.create_user(
+      email,
+      password=password,
+      is_staff=True,
+      is_admin=True
+    )
+    return user
+
+
+
+class User(AbstractBaseUser):
+  email = models.EmailField(max_length=100, unique=True)
+  location = models.CharField(max_length=100, blank=True, null=True)
+  first_name = models.CharField(max_length=100, blank=True, null=True)
+  last_name = models.CharField(max_length=100, blank=True, null=True)
+  address = models.CharField(max_length=100, blank=True, null=True)
+  zipcode = models.PositiveIntegerField(blank=True, null=True)
+  phone = models.CharField(max_length=15, blank=True, null=True)
+  active = models.BooleanField(default=True)
+  staff = models.BooleanField(default=False)
+  admin = models.BooleanField(default=False)
+
+  objects = UserManager()
+
+
+  USERNAME_FIELD = 'email'
+  REQUIRED_FIELDS = []
+
+  def __str__(self):
+    return self.email
+
+  if first_name and last_name:
+    def get_full_name(self):
+      return '{0} {1}'.format(self.first_name, self.last_name)
+  
+
+  def has_perm(self, perm, obj=None):
+    return True
+
+  def has_module_perms(self, app_label):
+    return True
+
+  @property
+  def is_staff(self):
+    return self.staff
+
+  @property
+  def is_active(self):
+    return self.active
+
+  @property
+  def is_admin(self):
+    return self.admin
+
+  
+
+
+
+
+
+  
+
+
 
 class Brand(models.Model):
   company_name = models.CharField(max_length=200, blank=True, null=True)
@@ -76,17 +174,18 @@ class Fleet(models.Model):
 
   brand_name = models.ForeignKey(Brand, on_delete=models.CASCADE, blank=True, null=True)
   car = models.ForeignKey(Car, on_delete=models.CASCADE, blank=True, null=True)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
   obelezje = models.CharField(max_length=200)
   cena = models.PositiveIntegerField()
   opis = models.TextField(blank=True)
-  photo1 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True)
-  photo2 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True)
-  photo3 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True)
-  photo4 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True)
-  photo5 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True)
-  photo6 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True)
-  photo7 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True)
-  photo8 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True)
+  photo1 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True, default='no_photo.png')
+  photo2 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True, default='no_photo.png')
+  photo3 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True, default='no_photo.png')
+  photo4 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True, default='no_photo.png')
+  photo5 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True, default='no_photo.png')
+  photo6 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True, default='no_photo.png')
+  photo7 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True, default='no_photo.png')
+  photo8 = models.ImageField(upload_to='cars/%Y/%m/%d', blank=True, default='no_photo.png')
   oglas_postavljen = models.DateTimeField(default=datetime.now)
   # Osnovne Informacije
   godiste = models.PositiveIntegerField()
@@ -126,6 +225,7 @@ class Fleet(models.Model):
 
   def brand(self):
     return self.car.brand.company_name
+
 
   def snaga_ks(self):
     return self.snaga_kw * 1.36

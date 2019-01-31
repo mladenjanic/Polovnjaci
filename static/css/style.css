@@ -1,6 +1,50 @@
+body {
+  color: #2a2b29;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  color: #50514f;
+  font-weight: 600;
+}
 
 .footer {
   background-color: rgba(80, 81, 79, 1) !important;
+}
+
+footer {
+  color: antiquewhite !important;
+}
+
+a.nav-link {
+  color: #f25f5c !important;
+  font-weight: 600 !important;
+}
+
+.border-info {
+  border-color: #f25f5c !important;
+}
+
+.nav-link:hover {
+  color: #50514f !important;
+}
+.pol {
+  visibility: hidden;
+}
+
+img.upload-img {
+  height: 359px !important;
+}
+
+
+.navbar-brand {
+  background-image: url('../img/logo.png') !important;
+  background-position-y: 4px;
+  background-repeat: no-repeat;
+}
+
+.navbar-brand:hover {
+  background-image: url('../img/logo1.png') !important;
 }
 
 .btn-secondary {
@@ -9,17 +53,83 @@
 img {
   width: 100%; }
 
+.listcar {
+  border: 1px solid #50514f !important;
+  border-radius: 5px;
+}
+
 .logo {
   width: 80px; }
+
+#myCarousel {
+  border: 2px solid #70c1b3;
+  border-radius: 5px;
+  padding: 5px 5px 0 5px;
+}
+
+#myCarousel .list-inline {
+  white-space:nowrap;
+  overflow-x:auto;
+}
+
+#myCarousel .carousel-indicators {
+    position: static;
+    left: initial;
+    width: 100%;
+    margin-left: initial;
+}
+
+#myCarousel .carousel-indicators > li {
+    width: initial;
+    height: initial;
+    text-indent: initial;
+}
+
+#myCarousel .carousel-indicators > li.active img {
+    opacity: 0.7;
+}
+
+#myCarousel .carousel-control {
+  overflow: block !important;
+}
 
 .navbar {
   opacity: 0.9;
   text-transform: uppercase;
-  background-color: rgba(242, 95, 92, 1);
+  background-color: #ffe066 !important;
  }
+
+.cena {
+  width: 40%;
+  padding-left: 0;
+}
+
+.price {
+  position: relative;
+  text-align: left;
+}
+
+.price-num {
+  background-image: url('../img/price.png');
+  background-repeat: no-repeat;
+  background-size: 25%;
+  padding: 12px 10px 10px 15px;
+  color: #ffe066;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.segment-title {
+  color: #f25f5c;
+}
+
+.separator {
+  border-top: 1px solid #f25f5c;
+}
 
 .social a {
   margin-right: 0.4rem; }
+
 
 #showcase {
   background: url(../img/showcase.jpg) no-repeat top center fixed/cover;
