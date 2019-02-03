@@ -3,4 +3,13 @@
 
 {% block content %}
   <h1>Dobrodosli, {{ user.get_full_name }}!</h1>
+  <hr class="mb-3">
+  {% if fleets %}
+    <h4 class="mb-3">Vasi aktivni oglasi:</h4>
+    {% for fleet in fleets %}
+      <p><a href="{% url 'car' fleet.id %}">{{ fleet }}</a></p>
+    {% endfor %}
+  {% else %}
+    <h4>Trenutno nemate aktivnih oglasa</h4>
+  {% endif %}
 {% endblock %}
