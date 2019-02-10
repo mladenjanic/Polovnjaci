@@ -19,8 +19,8 @@
         {{ user_form.password1|as_crispy_field }}
         {{ user_form.password2|as_crispy_field }}
         
-        <input type="submit" value="Registruj" class="btn btn-success">
-        
+        <input type="submit" value="Kreiraj nalog" class="btn btn-success">
+        <p><small class="text-muted">Vec imas kreiran nalog? <a href="{% url 'login' %}" class="ml-2">Uloguj se</a></small></p>
     </div>
 </div>
 

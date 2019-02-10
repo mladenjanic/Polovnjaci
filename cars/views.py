@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.contrib import messages
 from django.db import transaction
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth import authenticate, login
+from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RegCarForm, UserForm, LoginForm
 from .models import Brand, Car, Fleet, User
@@ -19,8 +21,8 @@ def fleets(request):
 
   return render(request, 'cars/car_lists.html', {'fleets': paged_fleets})
 
-def fleet(request, fleet_id):
-  fleet = Fleet.objects.get(id=fleet_id)
+def fleet(request, id):
+  fleet = Fleet.objects.get(id=id)
   return render(request, 'cars/car_detail.html', {'fleet':fleet})
 
 def search(request):
@@ -50,11 +52,21 @@ def regcar(request):
   return render(request, 'cars/add_car.html', {'car_form': car_form})
 
 
-def profile(request):
+class FleetUpdate(UpdateView):
+  model = Fleet
+  fields = '__all__'
+  template_name = 'cars/car_edit.html'
+  
+class FleetDeleteView(DeleteView)  :
+  model = Fleet
+  template_name = 'cars/fleet_confirm_delete.html'
+  success_url = reverse_lazy('cars')
+
+
+@login_required
+def profile(request, id):
   fleets = Fleet.objects.filter(user_id=request.user.id)
   return render(request, 'account/profile.html', {'fleets': fleets})
-
-
 
 
 def register_user(request):
@@ -70,6 +82,24 @@ def register_user(request):
   else:
     user_form = UserForm()
   return render(request, 'registration/register_user.html', {'user_form': user_form })
+
+
+
+def edit_user(request, id):
+  user = User.objects.get(id=request.user.id)
+
+  form = UserForm(request.POST or None, instance=user)
+  if form.is_valid():
+    form.save()
+    messages.success(request, ('Uspesno ste izmenili podatke!'))
+    return redirect('profile')
+  
+  return render(request, 'registration/edit_user.html', {'form': form })
+
+class UserDeleteView(DeleteView):
+  model = User
+  template_name = 'registration/user_delete_confirm.html'
+  success_url = reverse_lazy('cars')
 
 
 def login_user(request):

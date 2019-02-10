@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+<form method="post" action="{% url 'update' user.id %}">
+{% csrf_token %}
+<div class="row justify-content-center">
+    <div class="col-xs-12 col-md-6 ">
+        {{ form.email|as_crispy_field }}
+        {{ form.first_name|as_crispy_field }}
+        {{ form.last_name|as_crispy_field }}
+        {{ form.location|as_crispy_field }}
+        {{ form.address|as_crispy_field }}
+        {{ form.zipcode|as_crispy_field }}
+        {{ form.phone|as_crispy_field }}
+        {{ form.password1|as_crispy_field }}
+        {{ form.password2|as_crispy_field }}
+        
+        <input type="submit" value="Sacuvaj izmene" class="btn btn-success">
+    </div>
+</div>
+
+</form>
+
+
+{% endblock %}

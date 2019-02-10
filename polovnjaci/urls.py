@@ -26,8 +26,9 @@ urlpatterns = [
     path('cars/', include('cars.urls')),
     path('admin/', admin.site.urls),
     path('accounts/register/', views.register_user, name='register'),
-    #path('accounts/update/', views.update_profile, name='update'),
     path('accounts/login/', views.login_user, name='login'),
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('accounts/profile/', views.profile, name='profile')
+    path('accounts/<int:id>/', views.profile, name='profile'),
+    path('accounts/<int:id>/edit/', views.edit_user, name='update'),
+    path('accounts/<int:pk>/delete/', views.UserDeleteView.as_view(), name='delete-profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

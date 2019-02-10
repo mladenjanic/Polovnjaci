@@ -220,6 +220,9 @@ class Fleet(models.Model):
   kuka = models.BooleanField(default=False)
   kamera = models.BooleanField(default=False)
 
+  def get_absolute_url(self):
+    return "/cars/%i/" % self.id
+
   def car_name(self):
     return self.car.name
 
