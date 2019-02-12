@@ -24,9 +24,6 @@ class RegCarForm(forms.ModelForm):
   registrovan_do = forms.CharField(widget=forms.DateInput(attrs={'placeholder': 'gggg-mm-dd'}))
   
   
-  
-  
-
   brands = json.dumps(brands)
   cars = json.dumps(dcars)
 
@@ -35,7 +32,6 @@ class RegCarForm(forms.ModelForm):
     fields = ['brand_select', 'car_select','brand_name', 'car', 'obelezje', 'cena', 'oglas_postavljen', 'godiste', 'karoserija', 'gorivo', 'kubikaza', 'snaga_kw', 'kilometraza', 'broj_vrata', 'broj_sedista', 'menjac', 'boja', 'klima', 'registrovan_do', 'abs', 'esp', 'airbag_vozac', 'airbag_suvozac', 'alarm', 'centralno_zakljucavanje', 'tempomat', 'putni_racunar', 'metalik_boja', 'navigacija', 'svetla_za_maglu', 'siber', 'alu_felne', 'dpf', 'kuka', 'kamera', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'photo6', 'photo7', 'photo8','user', 'opis']
     
     
-
   def __init__(self, user, *args, **kwargs):
     super(RegCarForm, self).__init__(*args, **kwargs)
     if user.is_staff:

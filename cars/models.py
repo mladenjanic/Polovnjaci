@@ -6,17 +6,6 @@ from django.dispatch import receiver
 from datetime import datetime
 
 
-# class Profile(models.Model):
-#   user = models.OneToOneField(User, on_delete=models.CASCADE)
-#   location = models.CharField(max_length=100, blank=True)
-#   address = models.CharField(max_length=100, blank=True)
-#   zipcode = models.PositiveIntegerField(blank=True)
-#   phone = models.CharField(max_length=15, blank=True)
-#   is_staff = models.BooleanField(default=False)
-
-#   def __str__(self):
-#     return self.user.username
-
 
 class UserManager(BaseUserManager):
   def create_user(self, email, password=None, is_active=True, is_staff=False,       is_admin=False):
@@ -98,13 +87,6 @@ class User(AbstractBaseUser):
     return self.admin
 
   
-
-
-
-
-
-  
-
 
 
 class Brand(models.Model):
@@ -228,7 +210,6 @@ class Fleet(models.Model):
 
   def brand(self):
     return self.car.brand.company_name
-
 
   def snaga_ks(self):
     return self.snaga_kw * 1.36
