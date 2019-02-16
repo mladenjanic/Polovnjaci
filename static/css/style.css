@@ -36,6 +36,12 @@ img.upload-img {
   height: 359px !important;
 }
 
+.search-form {
+  border: 2px solid #f25f5c !important;
+  border-radius: 5px !important;
+  padding: 10px;
+}
+
 
 .navbar-brand {
   background-image: url('../img/logo.png') !important;

@@ -7,8 +7,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth import authenticate, login
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RegCarForm, UserForm, LoginForm
+from .forms import RegCarForm, UserForm, LoginForm, SearchForm
 from .models import Brand, Car, Fleet, User
+
 
 
 
@@ -25,9 +26,7 @@ def fleet(request, id):
   fleet = Fleet.objects.get(id=id)
   return render(request, 'cars/car_detail.html', {'fleet':fleet})
 
-def search(request):
-  return render(request, 'cars/car_search.html', {})
-
+@login_required
 def regcar(request):
   user = User.objects.get(pk=request.user.id)
   if request.method == 'POST':
@@ -61,6 +60,41 @@ class FleetDeleteView(DeleteView)  :
   model = Fleet
   template_name = 'cars/fleet_confirm_delete.html'
   success_url = reverse_lazy('cars')
+
+
+def search(request):
+  queryset_list = Fleet.objects.order_by('-oglas_postavljen')
+  user = User.objects.get(pk=1)
+  car_form = SearchForm()
+  
+
+  if 'karoserija' in request.GET:
+    karoserija = request.GET['karoserija']
+    if karoserija:
+      queryset_list = queryset_list.filter(karoserija__exact=karoserija)
+  
+  if 'brand_select' in request.GET:
+    brand = request.GET['brand_select']
+    if brand:
+      queryset_list = queryset_list.filter(brand_name__company_name=brand)
+
+  if 'cena_do' in request.GET:
+    cena_do = request.GET['cena_do']
+    if cena_do:
+      queryset_list = queryset_list.filter(cena__lte=cena_do)
+
+  if 'cena_od' in request.GET:
+    cena_od = request.GET['cena_od']
+    if cena_od:
+      queryset_list = queryset_list.filter(cena__gte=cena_od)
+
+  if 'gorivo' in request.GET:
+    gorivo = request.GET['gorivo']
+    if gorivo:
+      queryset_list = queryset_list.filter(gorivo__exact=gorivo)
+   
+  return render(request, 'cars/car_search.html', {'car_form': car_form, 'fleets': queryset_list})
+
 
 
 @login_required

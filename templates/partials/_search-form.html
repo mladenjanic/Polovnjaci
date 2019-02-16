@@ -1,0 +1,51 @@
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+    <div class="row justify-content-center">
+        <div class="col-8">
+          <div class="search-form">
+            <h1 class="mt-2 mb-5 text-center">Pretrazi Oglase</h1>
+            <hr class="mt-0 mb-5">
+            <form action="{% url 'search' %}" >
+                
+                <div class="row">
+                    <div class="col-6">
+                        {{ car_form.brand_select|as_crispy_field }}
+                    </div>
+                    <div class="col-6">
+                        {{ car_form.car_select|as_crispy_field }}
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-3">
+                        {{ car_form.cena_od|as_crispy_field }}
+                    </div>
+                    <div class="col-3">
+                      {{ car_form.cena_do|as_crispy_field }}
+                  </div>
+                    <div class="col-3">
+                        {{ car_form.godiste_od|as_crispy_field }}
+                    </div>
+                    <div class="col-3">
+                      {{ car_form.godiste_do|as_crispy_field }}
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        {{ car_form.karoserija|as_crispy_field }}
+                    </div>
+                    <div class="col-6">
+                        {{ car_form.gorivo|as_crispy_field }}
+                    </div>
+                </div>
+                
+                <input type="submit" value="Trazi" class="btn btn-info btn-block">
+            </form>
+            <br>
+        </div>
+        </div>
+    </div>
+
+

@@ -2,7 +2,7 @@ import json
 from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.contrib.auth.forms import UserCreationForm
-#from django.contrib.auth.models import User
+from pages.search_choices import karoserija, gorivo
 from .models import *
 
 class RegCarForm(forms.ModelForm):
@@ -39,6 +39,44 @@ class RegCarForm(forms.ModelForm):
     self.fields['car'].widget = forms.HiddenInput()
     self.fields['brand_name'].widget = forms.HiddenInput()
     self.initial['user'] = User.objects.get(pk=user.id)
+
+
+
+class SearchForm(forms.Form):
+  dcars = {}
+  list_cars = []
+  for car in Car.objects.all():
+    if car.brand.company_name in dcars:
+      dcars[car.brand.company_name].append(car.name)
+    else:
+      dcars[car.brand.company_name] = [car.name]
+    list_cars.append((car.name,car.name))
+
+  brands = [str(brand) for brand in Brand.objects.all()]
+
+  brands = json.dumps(brands)
+  cars = json.dumps(dcars)
+  
+
+  brand_select = forms.ChoiceField(choices=([(brand, brand) for brand in brands]), label='', required=False)
+  car_select = forms.ChoiceField(choices=(list_cars), label='', required=False)
+
+  cena_od = forms.IntegerField(required=False)
+  cena_do = forms.IntegerField(required=False)
+  godiste_od = forms.IntegerField(required=False)
+  godiste_do = forms.IntegerField(required=False)
+  karoserija = forms.ChoiceField(choices=(karoserija), required=False)
+  gorivo = forms.ChoiceField(choices=(gorivo), required=False)
+  
+    
+  def __init__(self, *args, **kwargs):
+    super(SearchForm, self).__init__(*args, **kwargs)
+    self.fields['brand_select'].queryset = Brand.objects.all()
+    
+   
+
+
+
     
 
 class UserForm(forms.ModelForm):
