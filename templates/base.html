@@ -18,7 +18,7 @@
 </head>
 <body>
   {% include 'partials/_navbar.html' %}
-  
+  {% block header %}{% endblock %}
   <div class="container">
     {% if messages %}
       {% for message in messages %}
