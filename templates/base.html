@@ -18,15 +18,21 @@
 </head>
 <body>
   {% include 'partials/_navbar.html' %}
-  {% block header %}{% endblock %}
-  <div class="container">
-    {% if messages %}
-      {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-      {% endfor %}
-    {% endif %}
+  {% block header %}
+ 
+  
+    <div class="container main">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
     {% block content %}{% endblock %}
-  </div>
+    </div>
+  {% endblock %}
+
+  
+  
 
   {% include 'partials/_footer.html' %}
 

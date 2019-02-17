@@ -72,6 +72,10 @@ class SearchForm(forms.Form):
   def __init__(self, *args, **kwargs):
     super(SearchForm, self).__init__(*args, **kwargs)
     self.fields['brand_select'].queryset = Brand.objects.all()
+    self.fields['cena_od'].widget.attrs.update({'placeholder': 'min €'})
+    self.fields['cena_do'].widget.attrs.update({'placeholder': 'max €'})
+    self.fields['godiste_od'].widget.attrs.update({'placeholder': '----'})
+    self.fields['godiste_do'].widget.attrs.update({'placeholder': '----'})
     
    
 

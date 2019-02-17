@@ -3,10 +3,8 @@
 {% load humanize %}
 
 {% block content %}
-  {% include 'partials/_search-form.html' %}
-  <br>
-  <hr class="mb-3">
-  <div class="row justify-content-center">
+  
+  <div class="row justify-content-center mt-4 mb-4">
     <div class="col-md-8">
       
       {% if fleets %}
@@ -34,7 +32,7 @@
         </div>
         {% endfor %}
       {% else %}
-        <h4 class="text-center">Zao nam je, za trazeni kriterijum trenutno nema oglasa!</h4>
+        <h4 class="text-center mb-4 mt-3">Zao nam je, za trazeni kriterijum trenutno nema oglasa!</h4>
       {% endif %}
       <div class="row">
           <div class="col-md-12">

@@ -2,15 +2,32 @@
 
 
 {% block content %}
-  <h1>Dobrodosli, {{ user.get_full_name }}!</h1>
-  <a href="{% url 'update' user.id %}"><i class="fas fa-edit"></i> Izmeni svoje podatke</a><a href="{% url 'delete-profile' user.id %}"><i class="fas fa-trash-alt ml-4"></i> Obrisi nalog</a>
-  <hr class="mb-3">
-  {% if fleets %}
-    <h4 class="mb-3">Vasi aktivni oglasi:</h4>
-    {% for fleet in fleets %}
-      <p><a href="{% url 'car' fleet.id %}">{{ fleet }}</a><a href="{% url 'edit-car' fleet.pk %}"><i class="fas fa-edit ml-5"></i></a><a href="{% url 'delete' fleet.pk %}"><i class="fas fa-trash-alt ml-3"></i></a></p>
-    {% endfor %}
-  {% else %}
-    <h4>Trenutno nemate aktivnih oglasa</h4>
-  {% endif %}
+<div class="row justify-content-center mb-3" >
+  <div class="col-xs-12 col-md-8" style="background-color:#fff;">
+      <h1 class="text-center">Dobrodosli, {{ user.get_full_name }}!</h1>
+      <br>
+      <div class="text-center">
+          <a href="{% url 'update' user.id %}"><i class="fas fa-edit"></i> Izmeni svoje podatke</a>
+          <a href="{% url 'delete-profile' user.id %}"><i class="fas fa-trash-alt ml-4"></i> Obrisi nalog</a>
+      </div>
+      <hr>
+      {% if fleets %}
+        <h4 class="mb-3">Vasi aktivni oglasi:</h4>
+        <br>
+        <div class="row">
+        {% for fleet in fleets %}
+          <div class="col-xs-12 col-md-6">
+              <p><a href="{% url 'car' fleet.id %}">{{ fleet }}</a>
+          </div>
+          <div class="col-xs-12 col-md-6">
+              <a href="{% url 'edit-car' fleet.pk %}"><i class="fas fa-edit ml-5"></i></a>
+              <a href="{% url 'delete' fleet.pk %}"><i class="fas fa-trash-alt ml-3"></i></a>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <h4>Trenutno nemate aktivnih oglasa</h4>
+      {% endif %}
+  </div>
+</div>
 {% endblock %}
