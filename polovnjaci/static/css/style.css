@@ -124,11 +124,18 @@ img {
 .price-num {
   background-image: url('../img/price.png');
   background-repeat: no-repeat;
-  background-size: 50%;
+  background-size: 130px;
   padding: 12px 10px 10px 15px;
   color: #ffe066;
   font-weight: bold;
   font-size: 1.4rem;
+}
+
+.user_pic {
+  width: 20%;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  float: left;
 }
 
 .segment-title {

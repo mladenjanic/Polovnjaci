@@ -24,8 +24,8 @@ def fleets(request):
 
 def fleet(request, id):
   fleet = Fleet.objects.get(id=id)
-  user = User.objects.get(id=fleet.user.id)
-  return render(request, 'cars/car_detail.html', {'fleet':fleet, 'user': user})
+  fl_user = User.objects.get(id=fleet.user_id)
+  return render(request, 'cars/car_detail.html', {'fleet':fleet, 'fl_user': fl_user})
 
 @login_required
 def regcar(request):
