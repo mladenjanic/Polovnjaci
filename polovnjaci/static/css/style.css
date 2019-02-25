@@ -124,7 +124,7 @@ img {
 .price-num {
   background-image: url('../img/price.png');
   background-repeat: no-repeat;
-  background-size: 25%;
+  background-size: 50%;
   padding: 12px 10px 10px 15px;
   color: #ffe066;
   font-weight: bold;
