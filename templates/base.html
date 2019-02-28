@@ -14,10 +14,12 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-  <title>Polovnjaci</title>
+  <title>Polovnjaci {% block title%}{% endblock %}</title>
 </head>
 <body>
-  {% include 'partials/_navbar.html' %}
+  {% block navbar %}
+    {% include 'partials/_navbar.html' %}
+  {% endblock %}
   {% block header %}
  
   

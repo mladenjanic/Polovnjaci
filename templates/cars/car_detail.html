@@ -3,6 +3,8 @@
 {% load static %}
 {% load humanize %}
 
+{% block title%}| Detalji oglasa{% endblock %}
+
 {% block content %}
 <div style="background-color: #fff;" class="p-2 mb-3">
 <div class="row justify-content-center mb-2 mt-4">
@@ -123,6 +125,7 @@
           <p><b>Oglas postavljen:</b> {{ fleet.oglas_postavljen|date:"d/M/Y" }}</p>
       </div>
       <div class="col-lg-3 col-sm-12">
+          <br>
           <h4>Podaci o prodavcu:</h4>
           <hr>
           <p><i class="fas fa-user-tie"></i> {{fl_user.get_full_name}}</p>

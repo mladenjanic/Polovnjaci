@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% block title%}| Profil{% endblock %}
 
 {% block content %}
 <div class="row justify-content-center mb-3" >
@@ -20,8 +21,8 @@
               <p><a href="{% url 'car' fleet.id %}">{{ fleet }}</a>
           </div>
           <div class="col-xs-12 col-md-6">
-              <a href="{% url 'edit-car' fleet.pk %}"><i class="fas fa-edit ml-5"></i></a>
-              <a href="{% url 'delete' fleet.pk %}"><i class="fas fa-trash-alt ml-3"></i></a>
+              <a href="{% url 'edit-car' fleet.pk %}" class="btn btn-outline-info btn-sm text-align"><i class="fas fa-edit ml-5"></i> Izmeni oglas</a>
+              <a href="{% url 'delete' fleet.pk %}" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt ml-3"></i> Obrisi oglas</a>
           </div>
         </div>
         {% endfor %}

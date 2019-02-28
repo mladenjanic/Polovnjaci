@@ -148,9 +148,10 @@ def login_user(request):
     username = form.cleaned_data['username']
     password = form.cleaned_data['password']
     user = authenticate(request, username=username, password=password)
-    messages.success(request, ('Uspesno ste se ulogovali!'))
+   
     if user is not None:
       login(request, user)
+      messages.success(request, ('Uspesno ste se ulogovali!'))
       return redirect('/cars')
     else:
       messages.error(request, ('Ups! Proverite da li su uneti podaci ispravni'))
