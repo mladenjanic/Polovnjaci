@@ -1,6 +1,12 @@
+
 body {
+  position: relative;
+  background-image: url('../img/poster2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #2a2b29;
   font-family: 'Raleway', sans-serif;
+  
 }
 
 h1, h2, h3, h4 {
@@ -8,18 +14,30 @@ h1, h2, h3, h4 {
   font-weight: 600;
 }
 
+
+
 .footer {
   background-color: rgba(80, 81, 79, 1) !important;
+  /* position: absolute;
+  bottom: 0;
+  width: 100%; */
 }
 
 footer {
-  color: antiquewhite !important;
+  color: antiquewhite !important; 
+}
+
+.main {
+  padding-top: 10px;
+  
 }
 
 a.nav-link {
   color: #f25f5c !important;
   font-weight: 600 !important;
 }
+
+
 
 .border-info {
   border-color: #f25f5c !important;
@@ -36,33 +54,25 @@ img.upload-img {
   height: 359px !important;
 }
 
-.search-form {
-  border: 2px solid #f25f5c !important;
-  border-radius: 5px !important;
-  padding: 10px;
-}
-
 
 .navbar-brand {
   background-image: url('../img/logo.png') !important;
-  background-position-y: 4px;
   background-repeat: no-repeat;
+  width: 200px;
+  margin-bottom: 0;
+  padding-top: 5px;;
 }
 
 .navbar-brand:hover {
   background-image: url('../img/logo1.png') !important;
 }
 
+
 .btn-secondary {
   color: #fff !important; }
 
 img {
   width: 100%; }
-
-.listcar {
-  border: 1px solid #50514f !important;
-  border-radius: 5px;
-}
 
 .logo {
   width: 80px; }
@@ -100,9 +110,12 @@ img {
 }
 
 .navbar {
-  opacity: 0.9;
   text-transform: uppercase;
   background-color: #ffe066 !important;
+ }
+
+ .navbar-1 {
+  background-color: rgba(244, 240, 213, 0.781) !important; 
  }
 
 .cena {
@@ -118,11 +131,18 @@ img {
 .price-num {
   background-image: url('../img/price.png');
   background-repeat: no-repeat;
-  background-size: 25%;
+  background-size: 130px;
   padding: 12px 10px 10px 15px;
   color: #ffe066;
   font-weight: bold;
   font-size: 1.4rem;
+}
+
+.user_pic {
+  width: 20%;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  float: left;
 }
 
 .segment-title {
@@ -136,6 +156,216 @@ img {
 .social a {
   margin-right: 0.4rem; }
 
+.listcar {
+  border: 1px solid #d0d4ca !important;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.listcar-price {
+  color: #f25f5c;
+  font-weight: bold;
+}
+
+.search-form {
+  border: 1px solid #5f5f5c !important;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: rgba(97, 94, 94, 0.7);
+  color: #ffe066;
+}
+
+.search-form>h1,h2,h3 {
+  color: #ffe066;
+}
+
+.search-button {
+  background-color: #ffe066 !important;
+  border-color: #ffe066 !important;
+  color: #f25f5c;
+  font-weight: bold;
+}
+
+.search-button:hover {
+  background-color: #f25f5c !important;
+  color: #ffe066 !important;
+}
+
+.text-muted {
+  color: #ffe066 !important;
+}
+
+.poster {
+  background: url('../img/poster3.jpg') no-repeat fixed;
+  background-size: cover;
+  width: 100%;
+  margin-top: -200px;
+  margin-bottom: 0;
+  height: auto;
+  padding-top: 20px;
+}
+
+.poster img {
+  width: 100%;
+  height: auto;
+}
+
+.poster-head {
+  padding-bottom: 20rem;
+}
+
+
+
+label.col-form-label[for='id_photo1'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/pic_1.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #ffe066!important;
+  font-weight: bold;
+  border:2px solid #ffe066;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo2'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/pic_1.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #ffe066 !important;
+  font-weight: bold;
+  border:2px solid #ffe066;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo3'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/pic_1.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #ffe066!important;
+  font-weight: bold;
+  border:2px solid #ffe066;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo4'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/pic_1.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #ffe066 !important;
+  font-weight: bold;
+  border:2px solid #ffe066;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo5'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/pic_1.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #ffe066 !important;
+  border:2px solid #ffe066;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo6'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/pic_1.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #ffe066 !important;
+  border:2px solid #ffe066;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo7'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/pic_1.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #ffe066 !important;
+  border:2px solid #ffe066;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+label.col-form-label[for='id_photo8'] {
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/pic_1.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: center;
+  color: #ffe066 !important;
+  border:2px solid #ffe066;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: auto;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+
+input[type='file']{
+  display: none;
+}
 
 #showcase {
   background: url(../img/showcase.jpg) no-repeat top center fixed/cover;

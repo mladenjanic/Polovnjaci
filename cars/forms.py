@@ -39,6 +39,7 @@ class RegCarForm(forms.ModelForm):
     self.fields['car'].widget = forms.HiddenInput()
     self.fields['brand_name'].widget = forms.HiddenInput()
     self.initial['user'] = User.objects.get(pk=user.id)
+    self.fields['user'].widget = forms.HiddenInput()
 
 
 

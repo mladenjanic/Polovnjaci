@@ -57,13 +57,16 @@ img.upload-img {
 
 .navbar-brand {
   background-image: url('../img/logo.png') !important;
-  background-position-y: 4px;
   background-repeat: no-repeat;
+  width: 200px;
+  margin-bottom: 0;
+  padding-top: 5px;;
 }
 
 .navbar-brand:hover {
   background-image: url('../img/logo1.png') !important;
 }
+
 
 .btn-secondary {
   color: #fff !important; }
@@ -218,7 +221,7 @@ img {
 label.col-form-label[for='id_photo1'] {
   width: 90px;
   height: 90px;
-  background-image: url(../img/logo.png);
+  background-image: url(../img/pic_1.png);
   background-repeat: no-repeat;
   background-size: 90%;
   background-position-x: center;
@@ -236,7 +239,7 @@ label.col-form-label[for='id_photo1'] {
 label.col-form-label[for='id_photo2'] {
   width: 90px;
   height: 90px;
-  background-image: url(../img/logo.png);
+  background-image: url(../img/pic_1.png);
   background-repeat: no-repeat;
   background-size: 90%;
   background-position-x: center;
@@ -254,7 +257,7 @@ label.col-form-label[for='id_photo2'] {
 label.col-form-label[for='id_photo3'] {
   width: 90px;
   height: 90px;
-  background-image: url(../img/logo.png);
+  background-image: url(../img/pic_1.png);
   background-repeat: no-repeat;
   background-size: 90%;
   background-position-x: center;
@@ -272,7 +275,7 @@ label.col-form-label[for='id_photo3'] {
 label.col-form-label[for='id_photo4'] {
   width: 90px;
   height: 90px;
-  background-image: url(../img/logo.png);
+  background-image: url(../img/pic_1.png);
   background-repeat: no-repeat;
   background-size: 90%;
   background-position-x: center;
@@ -290,7 +293,7 @@ label.col-form-label[for='id_photo4'] {
 label.col-form-label[for='id_photo5'] {
   width: 90px;
   height: 90px;
-  background-image: url(../img/logo.png);
+  background-image: url(../img/pic_1.png);
   background-repeat: no-repeat;
   background-size: 90%;
   background-position-x: center;
@@ -308,7 +311,7 @@ label.col-form-label[for='id_photo5'] {
 label.col-form-label[for='id_photo6'] {
   width: 90px;
   height: 90px;
-  background-image: url(../img/logo.png);
+  background-image: url(../img/pic_1.png);
   background-repeat: no-repeat;
   background-size: 90%;
   background-position-x: center;
@@ -326,7 +329,7 @@ label.col-form-label[for='id_photo6'] {
 label.col-form-label[for='id_photo7'] {
   width: 90px;
   height: 90px;
-  background-image: url(../img/logo.png);
+  background-image: url(../img/pic_1.png);
   background-repeat: no-repeat;
   background-size: 90%;
   background-position-x: center;
@@ -344,7 +347,7 @@ label.col-form-label[for='id_photo7'] {
 label.col-form-label[for='id_photo8'] {
   width: 90px;
   height: 90px;
-  background-image: url(../img/logo.png);
+  background-image: url(../img/pic_1.png);
   background-repeat: no-repeat;
   background-size: 90%;
   background-position-x: center;
