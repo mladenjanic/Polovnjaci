@@ -1,58 +1,55 @@
-
 {% load crispy_forms_tags %}
 {% load static %}
 
-    <div class="row justify-content-center poster-head ml-2 mr-2">
-        <div class="col-xs-12 col-md-8">
-          <div class="search-form mt-5 mb-5">
+<div class="row justify-content-center poster-head ml-2 mr-2">
+    <div class="col-xs-12 col-md-8">
+        <div class="search-form mt-5 mb-5">
             <h1 class="mt-2 mb-5 text-center">Pretrazi Oglase</h1>
             <div class="row">
                 <div class="col-sm-12">
-                 <form action="{% url 'search' %}" >
-                
-                 <div class="row">
-                    <div class="col-xs-12 col-md-6">
-                        {{ car_form.brand_select|as_crispy_field }}
-                    </div>
-                    <div class="col-xs-12 col-md-6">
-                        {{ car_form.car_select|as_crispy_field }}
-                    </div>
+                    <form action="{% url 'search' %}">
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                {{ car_form.brand_select|as_crispy_field }}
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                {{ car_form.car_select|as_crispy_field }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-3">
+                                {{ car_form.cena_od|as_crispy_field }}
+                            </div>
+                            <div class="col-xs-12 col-md-3">
+                                {{ car_form.cena_do|as_crispy_field }}
+                            </div>
+                            <div class="col-xs-12 col-md-3">
+                                {{ car_form.godiste_od|as_crispy_field }}
+                            </div>
+                            <div class="col-xs-12 col-md-3">
+                                {{ car_form.godiste_do|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                {{ car_form.karoserija|as_crispy_field }}
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                {{ car_form.gorivo|as_crispy_field }}
+                            </div>
+                        </div>
                 </div>
-                
-                <div class="row">
-                    <div class="col-xs-12 col-md-3">
-                        {{ car_form.cena_od|as_crispy_field }}
-                    </div>
-                    <div class="col-xs-12 col-md-3">
-                      {{ car_form.cena_do|as_crispy_field }}
-                  </div>
-                    <div class="col-xs-12 col-md-3">
-                        {{ car_form.godiste_od|as_crispy_field }}
-                    </div>
-                    <div class="col-xs-12 col-md-3">
-                      {{ car_form.godiste_do|as_crispy_field }}
-                  </div>
+            </div>
+
+            <div class="row justify-content-center mt-2">
+                <div class="col-xs-12 col-md-6">
+                    <input type="submit" value="Trazi" class="btn btn-info btn-block search-button">
                 </div>
-                <div class="row">
-                    <div class="col-xs-12 col-md-6">
-                        {{ car_form.karoserija|as_crispy_field }}
-                    </div>
-                    <div class="col-xs-12 col-md-6">
-                        {{ car_form.gorivo|as_crispy_field }}
-                    </div>
-                </div>
-                </div>
-                </div>
-                
-                <div class="row justify-content-center mt-2">
-                    <div class="col-xs-12 col-md-6">
-                        <input type="submit" value="Trazi" class="btn btn-info btn-block search-button">
-                    </div>
-                </div>
+            </div>
             </form>
             <br>
         </div>
-        </div>
     </div>
-
-
+</div>

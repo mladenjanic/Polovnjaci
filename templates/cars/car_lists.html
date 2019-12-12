@@ -8,72 +8,75 @@
 
 {% block content %}
 <div class="row justify-content-center mb-4">
-<div class="col-md-8">
-  
-  {% if fleets %}
+  <div class="col-md-8">
+
+    {% if fleets %}
     {% for fleet in fleets %}
     <div class="listcar mb-2">
       <div class="row">
-          <div class="col-sm-6">
-            <p class="ml-2 pt-2"><b>{{ fleet }}</b></p>
-          </div>
-          <div class="col-sm-6 text-right">
-            <p class="mr-2 pt-2 listcar-price">{{ fleet.cena|intcomma }} &euro;</p>
-          </div>
+        <div class="col-sm-6">
+          <p class="ml-2 pt-2"><b>{{ fleet }}</b></p>
+        </div>
+        <div class="col-sm-6 text-right">
+          <p class="mr-2 pt-2 listcar-price">{{ fleet.cena|intcomma }} &euro;</p>
+        </div>
       </div>
       <div class="row">
-          <div class="col-sm-4 col-xs-12">
-              <a href="{% url 'car' fleet.id %}"><img src="{{fleet.photo1.url}}" class="img-thumbnail rounded float-left" ></a>
-          </div>
-          <div class="col-sm-8 col-xs-12 pl-4">
-            <p>{{ fleet.godiste }} | {{ fleet.kilometraza|intcomma }} km | {{ fleet.gorivo }} | {{ fleet.kubikaza }} cm<sup>3</sup> | {{ fleet.karoserija }}</p>
-            <p>{{ fleet.snaga_kw }}(KW)/{{ fleet.snaga_ks|floatformat:"0" }}(KS), {{ fleet.menjac }}, {{ fleet.broj_vrata }} vrata, {{ fleet.broj_sedista }}</p>
-            <p><i class="far fa-calendar-alt"></i> Datum objave: {{ fleet.oglas_postavljen|date:"d/M/Y" }}</p>
-            <p><i class="fas fa-map-marker-alt"></i> {{ fleet.user.location }}</p>
-          </div>
+        <div class="col-sm-4 col-xs-12">
+          <a href="{% url 'car' fleet.id %}"><img src="{{fleet.photo1.url}}"
+              class="img-thumbnail rounded float-left"></a>
+        </div>
+        <div class="col-sm-8 col-xs-12 pl-4">
+          <p>{{ fleet.godiste }} | {{ fleet.kilometraza|intcomma }} km | {{ fleet.gorivo }} | {{ fleet.kubikaza }}
+            cm<sup>3</sup> | {{ fleet.karoserija }}</p>
+          <p>{{ fleet.snaga_kw }}(KW)/{{ fleet.snaga_ks|floatformat:"0" }}(KS), {{ fleet.menjac }},
+            {{ fleet.broj_vrata }} vrata, {{ fleet.broj_sedista }}</p>
+          <p><i class="far fa-calendar-alt"></i> Datum objave: {{ fleet.oglas_postavljen|date:"d/M/Y" }}</p>
+          <p><i class="fas fa-map-marker-alt"></i> {{ fleet.user.location }}</p>
+        </div>
       </div>
     </div>
     {% endfor %}
-  {% else %}
+    {% else %}
     <p>Trenutno nema oglasa</p>
-  {% endif %}
-  <div class="row">
+    {% endif %}
+    <div class="row">
       <div class="col-md-12">
         {% if fleets.has_other_pages %}
         <ul class="pagination">
           {% if fleets.has_previous %}
-            <li class="page-item">
-              <a href="?page={{fleets.previous_page_number}}" class="page-link">&laquo;</a>
-            </li>
+          <li class="page-item">
+            <a href="?page={{fleets.previous_page_number}}" class="page-link">&laquo;</a>
+          </li>
           {% else %}
-            <li class="page-item disabled">
-              <a class="page-link">&laquo;</a>
-            </li>
+          <li class="page-item disabled">
+            <a class="page-link">&laquo;</a>
+          </li>
           {% endif %}
           {% for i in fleets.paginator.page_range %}
-            {% if fleets.number == i %}
-              <li class="page-item active">
-                <a class="page-link">{{i}}</a>
-              </li>
-            {% else %}
-              <li class="page-item">
-                <a href="?page={{i}}" class="page-link">{{i}}</a>
-              </li>
-            {% endif %}
+          {% if fleets.number == i %}
+          <li class="page-item active">
+            <a class="page-link">{{i}}</a>
+          </li>
+          {% else %}
+          <li class="page-item">
+            <a href="?page={{i}}" class="page-link">{{i}}</a>
+          </li>
+          {% endif %}
           {% endfor %}
           {% if fleets.has_next %}
-            <li class="page-item">
-              <a href="?page={{fleets.next_page_number}}" class="page-link">&raquo;</a>
-            </li>
+          <li class="page-item">
+            <a href="?page={{fleets.next_page_number}}" class="page-link">&raquo;</a>
+          </li>
           {% else %}
-            <li class="page-item disabled">
-              <a class="page-link">&raquo;</a>
-            </li>
+          <li class="page-item disabled">
+            <a class="page-link">&raquo;</a>
+          </li>
           {% endif %}
         </ul>
         {% endif %}
       </div>
     </div>
-</div>
+  </div>
 </div>
 {% endblock %}

@@ -3,32 +3,34 @@
 {% block title%}| Profil{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center mb-3" >
+<div class="row justify-content-center mb-3">
   <div class="col-xs-12 col-md-8" style="background-color:#fff;">
-      <h1 class="text-center">Dobrodosli, {{ user.get_full_name }}!</h1>
-      <br>
-      <div class="text-center">
-          <a href="{% url 'update' user.id %}"><i class="fas fa-edit"></i> Izmeni svoje podatke</a>
-          <a href="{% url 'delete-profile' user.id %}"><i class="fas fa-trash-alt ml-4"></i> Obrisi nalog</a>
+    <h1 class="text-center">Dobrodosli, {{ user.get_full_name }}!</h1>
+    <br>
+    <div class="text-center">
+      <a href="{% url 'update' user.id %}"><i class="fas fa-edit"></i> Izmeni svoje podatke</a>
+      <a href="{% url 'delete-profile' user.id %}"><i class="fas fa-trash-alt ml-4"></i> Obrisi nalog</a>
+    </div>
+    <hr>
+    {% if fleets %}
+    <h4 class="mb-3">Vasi aktivni oglasi:</h4>
+    <br>
+    <div class="row">
+      {% for fleet in fleets %}
+      <div class="col-xs-12 col-md-6">
+        <p><a href="{% url 'car' fleet.id %}">{{ fleet }}</a>
       </div>
-      <hr>
-      {% if fleets %}
-        <h4 class="mb-3">Vasi aktivni oglasi:</h4>
-        <br>
-        <div class="row">
-        {% for fleet in fleets %}
-          <div class="col-xs-12 col-md-6">
-              <p><a href="{% url 'car' fleet.id %}">{{ fleet }}</a>
-          </div>
-          <div class="col-xs-12 col-md-6">
-              <a href="{% url 'edit-car' fleet.pk %}" class="btn btn-outline-info btn-sm text-align"><i class="fas fa-edit ml-5"></i> Izmeni oglas</a>
-              <a href="{% url 'delete' fleet.pk %}" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt ml-3"></i> Obrisi oglas</a>
-          </div>
-        </div>
-        {% endfor %}
-      {% else %}
-        <h4>Trenutno nemate aktivnih oglasa</h4>
-      {% endif %}
+      <div class="col-xs-12 col-md-6">
+        <a href="{% url 'edit-car' fleet.pk %}" class="btn btn-outline-info btn-sm text-align"><i
+            class="fas fa-edit ml-5"></i> Izmeni oglas</a>
+        <a href="{% url 'delete' fleet.pk %}" class="btn btn-outline-danger btn-sm"><i
+            class="fas fa-trash-alt ml-3"></i> Obrisi oglas</a>
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h4>Trenutno nemate aktivnih oglasa</h4>
+    {% endif %}
   </div>
 </div>
 {% endblock %}

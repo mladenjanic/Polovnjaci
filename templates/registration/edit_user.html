@@ -3,29 +3,29 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="row justify-content-center mb-4 mt-4 pb-2 ml-2 mr-2">
-        <div class="col-xs-12 col-md-6 search-form">
-            <h2 class="mt-4 text-center">Izmeni nalog</h2>
+    <div class="col-xs-12 col-md-6 search-form">
+        <h2 class="mt-4 text-center">Izmeni nalog</h2>
 
 
-            <form method="post" action="{% url 'update' user.id %}">
+        <form method="post" action="{% url 'update' user.id %}">
             {% csrf_token %}
-        
-                {{ form.email|as_crispy_field }}
-                {{ form.first_name|as_crispy_field }}
-                {{ form.last_name|as_crispy_field }}
-                {{ form.location|as_crispy_field }}
-                {{ form.address|as_crispy_field }}
-                {{ form.zipcode|as_crispy_field }}
-                {{ form.phone|as_crispy_field }}
-                {{ form.password1|as_crispy_field }}
-                {{ form.password2|as_crispy_field }}
-        
-                <input type="submit" value="Sacuvaj izmene" class="btn search-button">
-                <a href="{% url 'profile' user.id %}" class="btn btn-info ml-3">Otkazi</a>
-            </form>
-        </div>
+
+            {{ form.email|as_crispy_field }}
+            {{ form.first_name|as_crispy_field }}
+            {{ form.last_name|as_crispy_field }}
+            {{ form.location|as_crispy_field }}
+            {{ form.address|as_crispy_field }}
+            {{ form.zipcode|as_crispy_field }}
+            {{ form.phone|as_crispy_field }}
+            {{ form.password1|as_crispy_field }}
+            {{ form.password2|as_crispy_field }}
+
+            <input type="submit" value="Sacuvaj izmene" class="btn search-button">
+            <a href="{% url 'profile' user.id %}" class="btn btn-info ml-3">Otkazi</a>
+        </form>
     </div>
-    
+</div>
+
 
 
 {% endblock %}

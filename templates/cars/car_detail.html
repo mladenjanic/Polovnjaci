@@ -7,132 +7,134 @@
 
 {% block content %}
 <div style="background-color: #fff;" class="p-2 mb-3">
-<div class="row justify-content-center mb-2 mt-4">
+  <div class="row justify-content-center mb-2 mt-4">
     <div class="col-xs-12 col-md-8">
       <h1 class="text-center">{{ fleet }}</h1>
     </div>
-</div>
-<hr>
-  <div class="row"  id="slider">
+  </div>
+  <hr>
+  <div class="row" id="slider">
     <div class="col-lg-6 col-sm-12">
-       {% if fleet.photo1 %}
+      {% if fleet.photo1 %}
       <div id="myCarousel" class="carousel slide">
         <div class="carousel-inner mb-2">
-            
-            <div class="active item carousel-item" data-slide-number="0">
-              <a href="{{fleet.photo1.url}}"><img src="{{fleet.photo1.url}}" class="img-fluid upload-img" ></a>
-            </div>
-            
-            <div class="item carousel-item" data-slide-number="1">
-              <a href="{{fleet.photo2.url}}"><img src="{{fleet.photo2.url}}" class="img-fluid"></a>
-            </div>
-            
-            <div class="item carousel-item" data-slide-number="2">
-              <a href="{{fleet.photo3.url}}"><img src="{{fleet.photo3.url}}" class="img-fluid"></a>
-            </div>
-            
-            <div class="item carousel-item" data-slide-number="3">
-              <a href="{{fleet.photo4.url}}"><img src="{{fleet.photo4.url}}" class="img-fluid"></a>
-            </div>
-            
-            <div class="item carousel-item" data-slide-number="4">
-              <a href="{{fleet.photo5.url}}"><img src="{{fleet.photo5.url}}" class="img-fluid"></a>
-            </div>
-            
-            <div class="item carousel-item" data-slide-number="5">
-              <a href="{{fleet.photo6.url}}"><img src="{{fleet.photo6.url}}" class="img-fluid"></a>
-            </div>
-            
-            <div class="item carousel-item" data-slide-number="6">
-              <a href="{{fleet.photo7.url}}"><img src="{{fleet.photo7.url}}" class="img-fluid"></a>
-            </div>
-         
-            <div class="item carousel-item" data-slide-number="7">
-              <a href="{{fleet.photo8.url}}"><img src="{{fleet.photo8.url}}" class="img-fluid"></a>
-            </div>
 
-            <a class="carousel-control-prev pt-3" href="#myCarousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-            <a class="carousel-control-next pt-3" href="#myCarousel" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+          <div class="active item carousel-item" data-slide-number="0">
+            <a href="{{fleet.photo1.url}}"><img src="{{fleet.photo1.url}}" class="img-fluid upload-img"></a>
+          </div>
+
+          <div class="item carousel-item" data-slide-number="1">
+            <a href="{{fleet.photo2.url}}"><img src="{{fleet.photo2.url}}" class="img-fluid"></a>
+          </div>
+
+          <div class="item carousel-item" data-slide-number="2">
+            <a href="{{fleet.photo3.url}}"><img src="{{fleet.photo3.url}}" class="img-fluid"></a>
+          </div>
+
+          <div class="item carousel-item" data-slide-number="3">
+            <a href="{{fleet.photo4.url}}"><img src="{{fleet.photo4.url}}" class="img-fluid"></a>
+          </div>
+
+          <div class="item carousel-item" data-slide-number="4">
+            <a href="{{fleet.photo5.url}}"><img src="{{fleet.photo5.url}}" class="img-fluid"></a>
+          </div>
+
+          <div class="item carousel-item" data-slide-number="5">
+            <a href="{{fleet.photo6.url}}"><img src="{{fleet.photo6.url}}" class="img-fluid"></a>
+          </div>
+
+          <div class="item carousel-item" data-slide-number="6">
+            <a href="{{fleet.photo7.url}}"><img src="{{fleet.photo7.url}}" class="img-fluid"></a>
+          </div>
+
+          <div class="item carousel-item" data-slide-number="7">
+            <a href="{{fleet.photo8.url}}"><img src="{{fleet.photo8.url}}" class="img-fluid"></a>
+          </div>
+
+          <a class="carousel-control-prev pt-3" href="#myCarousel" data-slide="prev"><i
+              class="fa fa-chevron-left"></i></a>
+          <a class="carousel-control-next pt-3" href="#myCarousel" data-slide="next"><i
+              class="fa fa-chevron-right"></i></a>
 
         </div>
 
 
         <ul class="carousel-indicators list-inline">
-            
-            <li class="list-inline-item active">
-                <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
-                    <img src="{{fleet.photo1.url}}" class="img-fluid">
-                </a>
-            </li>
-            
-            <li class="list-inline-item">
-                <a id="carousel-selector-1" data-slide-to="1" data-target="#myCarousel">
-                    <img src="{{fleet.photo2.url}}" class="img-fluid">
-                </a>
-            </li>
-            
-            <li class="list-inline-item">
-                <a id="carousel-selector-2" data-slide-to="2" data-target="#myCarousel">
-                    <img src="{{fleet.photo3.url}}" class="img-fluid">
-                </a>
-            </li>
-            
-            <li class="list-inline-item">
-                <a id="carousel-selector-3" data-slide-to="3" data-target="#myCarousel">
-                    <img src="{{fleet.photo4.url}}" class="img-fluid">
-                </a>
-            </li>
-            
-            <li class="list-inline-item">
-                <a id="carousel-selector-4" data-slide-to="4" data-target="#myCarousel">
-                    <img src="{{fleet.photo5.url}}" class="img-fluid">
-                </a>
-            </li>
-           
-            <li class="list-inline-item">
-                <a id="carousel-selector-5" data-slide-to="5" data-target="#myCarousel">
-                    <img src="{{fleet.photo6.url}}" class="img-fluid">
-                </a>
-            </li>
-            
-            <li class="list-inline-item">
-                <a id="carousel-selector-6" data-slide-to="6" data-target="#myCarousel">
-                    <img src="{{fleet.photo7.url}}" class="img-fluid">
-                </a>
-            </li>
-            
-            <li class="list-inline-item">
-                <a id="carousel-selector-7" data-slide-to="7" data-target="#myCarousel">
-                    <img src="{{fleet.photo8.url}}" class="img-fluid">
-                </a>
-            </li>
+
+          <li class="list-inline-item active">
+            <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
+              <img src="{{fleet.photo1.url}}" class="img-fluid">
+            </a>
+          </li>
+
+          <li class="list-inline-item">
+            <a id="carousel-selector-1" data-slide-to="1" data-target="#myCarousel">
+              <img src="{{fleet.photo2.url}}" class="img-fluid">
+            </a>
+          </li>
+
+          <li class="list-inline-item">
+            <a id="carousel-selector-2" data-slide-to="2" data-target="#myCarousel">
+              <img src="{{fleet.photo3.url}}" class="img-fluid">
+            </a>
+          </li>
+
+          <li class="list-inline-item">
+            <a id="carousel-selector-3" data-slide-to="3" data-target="#myCarousel">
+              <img src="{{fleet.photo4.url}}" class="img-fluid">
+            </a>
+          </li>
+
+          <li class="list-inline-item">
+            <a id="carousel-selector-4" data-slide-to="4" data-target="#myCarousel">
+              <img src="{{fleet.photo5.url}}" class="img-fluid">
+            </a>
+          </li>
+
+          <li class="list-inline-item">
+            <a id="carousel-selector-5" data-slide-to="5" data-target="#myCarousel">
+              <img src="{{fleet.photo6.url}}" class="img-fluid">
+            </a>
+          </li>
+
+          <li class="list-inline-item">
+            <a id="carousel-selector-6" data-slide-to="6" data-target="#myCarousel">
+              <img src="{{fleet.photo7.url}}" class="img-fluid">
+            </a>
+          </li>
+
+          <li class="list-inline-item">
+            <a id="carousel-selector-7" data-slide-to="7" data-target="#myCarousel">
+              <img src="{{fleet.photo8.url}}" class="img-fluid">
+            </a>
+          </li>
         </ul>
-      
+
       </div>
       {% endif %}
     </div>
-  
-  
-      <div class="col-lg-3 col-sm-12">
-          <p class="price-num mb-5">{{fleet.cena|intcomma }} &euro;</p>
-          <p><b>Marka:</b> {{ fleet.brand_name }}</p>
-          <p><b>Model:</b> {{ fleet.car }}</p>
-          <p><b>Godiste:</b> {{ fleet.godiste }}</p>
-          <p><b>Predjeno km:</b> {{ fleet.kilometraza|intcomma }}</p>
-          <p><b>Vrsta goriva:</b> {{ fleet.gorivo }}</p>
-          <p><b>Zapremina (cm<sup>3</sup>):</b> {{ fleet.kubikaza }}</p>
-          <p><b>Snaga (KW/KS):</b> {{ fleet.snaga_kw }}/{{ fleet.snaga_ks|floatformat:"0" }}</p>
-          <p><b>Oglas postavljen:</b> {{ fleet.oglas_postavljen|date:"d/M/Y" }}</p>
-      </div>
-      <div class="col-lg-3 col-sm-12">
-          <br>
-          <h4>Podaci o prodavcu:</h4>
-          <hr>
-          <p><i class="fas fa-user-tie"></i> {{fl_user.get_full_name}}</p>
-          <p><i class="fas fa-map-marker-alt"></i> {{fl_user.address}}</p>
-          <p><i class="fas fa-city"></i> {{fl_user.zipcode}} {{fl_user.location}}</p>
-          <p><i class="fas fa-mobile-alt"></i> {{fl_user.phone}}</p>
-      </div>
+
+
+    <div class="col-lg-3 col-sm-12">
+      <p class="price-num mb-5">{{fleet.cena|intcomma }} &euro;</p>
+      <p><b>Marka:</b> {{ fleet.brand_name }}</p>
+      <p><b>Model:</b> {{ fleet.car }}</p>
+      <p><b>Godiste:</b> {{ fleet.godiste }}</p>
+      <p><b>Predjeno km:</b> {{ fleet.kilometraza|intcomma }}</p>
+      <p><b>Vrsta goriva:</b> {{ fleet.gorivo }}</p>
+      <p><b>Zapremina (cm<sup>3</sup>):</b> {{ fleet.kubikaza }}</p>
+      <p><b>Snaga (KW/KS):</b> {{ fleet.snaga_kw }}/{{ fleet.snaga_ks|floatformat:"0" }}</p>
+      <p><b>Oglas postavljen:</b> {{ fleet.oglas_postavljen|date:"d/M/Y" }}</p>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <br>
+      <h4>Podaci o prodavcu:</h4>
+      <hr>
+      <p><i class="fas fa-user-tie"></i> {{fl_user.get_full_name}}</p>
+      <p><i class="fas fa-map-marker-alt"></i> {{fl_user.address}}</p>
+      <p><i class="fas fa-city"></i> {{fl_user.zipcode}} {{fl_user.location}}</p>
+      <p><i class="fas fa-mobile-alt"></i> {{fl_user.phone}}</p>
+    </div>
   </div>
   <div class="row">
     <div class="col-sm-12 mt-4">
@@ -147,61 +149,61 @@
       <p><b>Menjac:</b> {{ fleet.menjac }}</p>
     </div>
     <div class="col-sm-12 col-lg-6">
-        <p><b>Boja:</b> {{ fleet.boja|title }}</p>
-        <p><b>Klima:</b> {{ fleet.klima }}</p>
-        <p><b>Registrovan do:</b> {{ fleet.registrovan_do }}</p>
+      <p><b>Boja:</b> {{ fleet.boja|title }}</p>
+      <p><b>Klima:</b> {{ fleet.klima }}</p>
+      <p><b>Registrovan do:</b> {{ fleet.registrovan_do }}</p>
     </div>
   </div>
   <div class="row">
-      <div class="col-sm-12 mt-4">
-        <h3 class="segment-title">Sigurnost</h3>
-        <hr class="separator">
-      </div>
+    <div class="col-sm-12 mt-4">
+      <h3 class="segment-title">Sigurnost</h3>
+      <hr class="separator">
+    </div>
   </div>
   <div class="row">
-      <div class="col-sm-12 col-lg-6">
-        <p><b>Airbag vozac:</b> {% if fleet.airbag_vozac %}Da{% else %}Ne{% endif %}</p>
-        <p><b>Abs:</b> {% if fleet.abs %}Da{% else %}Ne{% endif %}</p>
-        <p><b>Esp:</b> {% if fleet.esp %}Da{% else %}Ne{% endif %}</p>
-      </div>
-      <div class="col-sm-12 col-lg-6">
-          <p><b>Airbag suvozac:</b> {% if fleet.airbag_suvozac %}Da{% else %}Ne{% endif %}</p>
-          <p><b>Alarm:</b> {% if fleet.alarm %}Da{% else %}Ne{% endif %}</p>
-          <p><b>Centralno zakljucavanje:</b> {% if fleet.centralno_zakljucavanje %}Da{% else %}Ne{% endif %}</p>
-      </div>
+    <div class="col-sm-12 col-lg-6">
+      <p><b>Airbag vozac:</b> {% if fleet.airbag_vozac %}Da{% else %}Ne{% endif %}</p>
+      <p><b>Abs:</b> {% if fleet.abs %}Da{% else %}Ne{% endif %}</p>
+      <p><b>Esp:</b> {% if fleet.esp %}Da{% else %}Ne{% endif %}</p>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+      <p><b>Airbag suvozac:</b> {% if fleet.airbag_suvozac %}Da{% else %}Ne{% endif %}</p>
+      <p><b>Alarm:</b> {% if fleet.alarm %}Da{% else %}Ne{% endif %}</p>
+      <p><b>Centralno zakljucavanje:</b> {% if fleet.centralno_zakljucavanje %}Da{% else %}Ne{% endif %}</p>
+    </div>
   </div>
   <div class="row">
-      <div class="col-sm-12 mt-4">
-        <h3 class="segment-title">Oprema</h3>
-        <hr class="separator">
-      </div>
+    <div class="col-sm-12 mt-4">
+      <h3 class="segment-title">Oprema</h3>
+      <hr class="separator">
+    </div>
   </div>
   <div class="row">
-      <div class="col-sm-12 col-lg-6">
-        <p><b>Tempomat:</b> {% if fleet.tempomat %}Da{% else %}Ne{% endif %}</p>
-        <p><b>Putni racunar:</b> {% if fleet.putni_racunar %}Da{% else %}Ne{% endif %}</p>
-        <p><b>Metalik boja:</b> {% if fleet.metalik_boja %}Da{% else %}Ne{% endif %}</p>
-        <p><b>Navigacija:</b> {% if fleet.navigacija %}Da{% else %}Ne{% endif %}</p>
-        <p><b>Svetla za maglu:</b> {% if fleet.svetla_za_maglu %}Da{% else %}Ne{% endif %}</p>
-      </div>
-      <div class="col-sm-12 col-lg-6">
-          <p><b>Siber:</b> {% if fleet.siber %}Da{% else %}Ne{% endif %}</p>
-          <p><b>Alu felne:</b> {% if fleet.alu_felne %}Da{% else %}Ne{% endif %}</p>
-          <p><b>DPF:</b> {% if fleet.dpf %}Da{% else %}Ne{% endif %}</p>
-          <p><b>Kuka za vucu:</b> {% if fleet.kuka %}Da{% else %}Ne{% endif %}</p>
-          <p><b>Kamera za voznju unazad:</b> {% if fleet.kamera %}Da{% else %}Ne{% endif %}</p>
-      </div>
+    <div class="col-sm-12 col-lg-6">
+      <p><b>Tempomat:</b> {% if fleet.tempomat %}Da{% else %}Ne{% endif %}</p>
+      <p><b>Putni racunar:</b> {% if fleet.putni_racunar %}Da{% else %}Ne{% endif %}</p>
+      <p><b>Metalik boja:</b> {% if fleet.metalik_boja %}Da{% else %}Ne{% endif %}</p>
+      <p><b>Navigacija:</b> {% if fleet.navigacija %}Da{% else %}Ne{% endif %}</p>
+      <p><b>Svetla za maglu:</b> {% if fleet.svetla_za_maglu %}Da{% else %}Ne{% endif %}</p>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+      <p><b>Siber:</b> {% if fleet.siber %}Da{% else %}Ne{% endif %}</p>
+      <p><b>Alu felne:</b> {% if fleet.alu_felne %}Da{% else %}Ne{% endif %}</p>
+      <p><b>DPF:</b> {% if fleet.dpf %}Da{% else %}Ne{% endif %}</p>
+      <p><b>Kuka za vucu:</b> {% if fleet.kuka %}Da{% else %}Ne{% endif %}</p>
+      <p><b>Kamera za voznju unazad:</b> {% if fleet.kamera %}Da{% else %}Ne{% endif %}</p>
+    </div>
   </div>
   <div class="row">
-      <div class="col-sm-12 mt-4">
-        <h3 class="segment-title">Opis</h3>
-        <hr class="separator">
-      </div>
+    <div class="col-sm-12 mt-4">
+      <h3 class="segment-title">Opis</h3>
+      <hr class="separator">
+    </div>
   </div>
   <div class="row mb-4">
-      <div class="col-sm-12">
-        <p>{{ fleet.opis }}</p>
-      </div>
+    <div class="col-sm-12">
+      <p>{{ fleet.opis }}</p>
+    </div>
   </div>
-  </div>
+</div>
 {% endblock %}

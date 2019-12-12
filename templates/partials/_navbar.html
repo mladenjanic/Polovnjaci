@@ -1,48 +1,49 @@
-
 {% load static %}
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="{% url 'index' %}"><span class="pol">polovnjaci</span></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  
-  
+
+
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-          <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-search"></i> Pretraga oglasa</a>
-            </li>
-          
-          {% if user.is_authenticated %}
-          <li class="nav-item  border border-info rounded">
-            <a href="{% url 'regcar' %}" class="nav-link">Postavi oglas</a>
-          </li>
-          {% endif %}
-          <li class="nav-item">
-              <a class="nav-link" href="{% url 'cars' %}"><i class="fas fa-car"></i> Svi Oglasi</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}"><i class="fas fa-info-circle"></i> O nama<span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
     <ul class="navbar-nav">
-      
-      
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-search"></i> Pretraga oglasa</a>
+      </li>
+
+      {% if user.is_authenticated %}
+      <li class="nav-item  border border-info rounded">
+        <a href="{% url 'regcar' %}" class="nav-link">Postavi oglas</a>
+      </li>
+      {% endif %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'cars' %}"><i class="fas fa-car"></i> Svi Oglasi</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}"><i class="fas fa-info-circle"></i> O nama<span
+            class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+
+
       {% if not user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link ml-0 pl-0" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Uloguj se</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link ml-0 pl-0" href="{% url 'register' %}"><i class="fas fa-user-plus"></i> Registruj se</a>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link ml-0 pl-0" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Uloguj se</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link ml-0 pl-0" href="{% url 'register' %}"><i class="fas fa-user-plus"></i> Registruj se</a>
+      </li>
       {% else %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'profile' user.id %}"><i class="fas fa-user"></i> Tvoj profil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Odjavi se</a>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'profile' user.id %}"><i class="fas fa-user"></i> Tvoj profil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Odjavi se</a>
+      </li>
       {% endif %}
     </ul>
   </div>
