@@ -1,4 +1,3 @@
-
 body {
   position: relative;
   background-image: url('../img/poster2.jpg');
@@ -6,15 +5,12 @@ body {
   background-attachment: fixed;
   color: #2a2b29;
   font-family: 'Raleway', sans-serif;
-  
 }
 
 h1, h2, h3, h4 {
   color: #50514f;
   font-weight: 600;
 }
-
-
 
 .footer {
   background-color: rgba(80, 81, 79, 1) !important;
@@ -24,20 +20,17 @@ h1, h2, h3, h4 {
 }
 
 footer {
-  color: antiquewhite !important; 
+  color: antiquewhite !important;
 }
 
 .main {
   padding-top: 10px;
-  
 }
 
 a.nav-link {
   color: #f25f5c !important;
   font-weight: 600 !important;
 }
-
-
 
 .border-info {
   border-color: #f25f5c !important;
@@ -46,6 +39,7 @@ a.nav-link {
 .nav-link:hover {
   color: #50514f !important;
 }
+
 .pol {
   visibility: hidden;
 }
@@ -54,28 +48,29 @@ img.upload-img {
   height: 359px !important;
 }
 
-
 .navbar-brand {
   background-image: url('../img/logo.png') !important;
   background-repeat: no-repeat;
   width: 200px;
   margin-bottom: 0;
-  padding-top: 5px;;
+  padding-top: 5px;
 }
 
 .navbar-brand:hover {
   background-image: url('../img/logo1.png') !important;
 }
 
-
 .btn-secondary {
-  color: #fff !important; }
+  color: #fff !important;
+}
 
 img {
-  width: 100%; }
+  width: 100%;
+}
 
 .logo {
-  width: 80px; }
+  width: 80px;
+}
 
 #myCarousel {
   border: 2px solid #70c1b3;
@@ -84,25 +79,25 @@ img {
 }
 
 #myCarousel .list-inline {
-  white-space:nowrap;
-  overflow-x:auto;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 #myCarousel .carousel-indicators {
-    position: static;
-    left: initial;
-    width: 100%;
-    margin-left: initial;
+  position: static;
+  left: initial;
+  width: 100%;
+  margin-left: initial;
 }
 
-#myCarousel .carousel-indicators > li {
-    width: initial;
-    height: initial;
-    text-indent: initial;
+#myCarousel .carousel-indicators>li {
+  width: initial;
+  height: initial;
+  text-indent: initial;
 }
 
-#myCarousel .carousel-indicators > li.active img {
-    opacity: 0.7;
+#myCarousel .carousel-indicators>li.active img {
+  opacity: 0.7;
 }
 
 #myCarousel .carousel-control {
@@ -112,11 +107,11 @@ img {
 .navbar {
   text-transform: uppercase;
   background-color: #ffe066 !important;
- }
+}
 
- .navbar-1 {
-  background-color: rgba(244, 240, 213, 0.781) !important; 
- }
+.navbar-1 {
+  background-color: rgba(244, 240, 213, 0.781) !important;
+}
 
 .cena {
   width: 40%;
@@ -154,7 +149,8 @@ img {
 }
 
 .social a {
-  margin-right: 0.4rem; }
+  margin-right: 0.4rem;
+}
 
 .listcar {
   border: 1px solid #d0d4ca !important;
@@ -162,7 +158,6 @@ img {
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 
 .listcar-price {
   color: #f25f5c;
@@ -177,7 +172,7 @@ img {
   color: #ffe066;
 }
 
-.search-form>h1,h2,h3 {
+.search-form>h1, h2, h3 {
   color: #ffe066;
 }
 
@@ -216,8 +211,6 @@ img {
   padding-bottom: 20rem;
 }
 
-
-
 label.col-form-label[for='id_photo1'] {
   width: 90px;
   height: 90px;
@@ -228,14 +221,14 @@ label.col-form-label[for='id_photo1'] {
   background-position-y: center;
   color: #ffe066!important;
   font-weight: bold;
-  border:2px solid #ffe066;
+  border: 2px solid #ffe066;
   border-radius: 5px;
   padding: auto;
   font-size: 11px;
   text-align: center;
   cursor: pointer;
-  
 }
+
 label.col-form-label[for='id_photo2'] {
   width: 90px;
   height: 90px;
@@ -246,14 +239,14 @@ label.col-form-label[for='id_photo2'] {
   background-position-y: center;
   color: #ffe066 !important;
   font-weight: bold;
-  border:2px solid #ffe066;
+  border: 2px solid #ffe066;
   border-radius: 5px;
   padding: auto;
   font-size: 11px;
   text-align: center;
   cursor: pointer;
-  
 }
+
 label.col-form-label[for='id_photo3'] {
   width: 90px;
   height: 90px;
@@ -264,14 +257,14 @@ label.col-form-label[for='id_photo3'] {
   background-position-y: center;
   color: #ffe066!important;
   font-weight: bold;
-  border:2px solid #ffe066;
+  border: 2px solid #ffe066;
   border-radius: 5px;
   padding: auto;
   font-size: 11px;
   text-align: center;
   cursor: pointer;
-  
 }
+
 label.col-form-label[for='id_photo4'] {
   width: 90px;
   height: 90px;
@@ -282,14 +275,14 @@ label.col-form-label[for='id_photo4'] {
   background-position-y: center;
   color: #ffe066 !important;
   font-weight: bold;
-  border:2px solid #ffe066;
+  border: 2px solid #ffe066;
   border-radius: 5px;
   padding: auto;
   font-size: 11px;
   text-align: center;
   cursor: pointer;
-  
 }
+
 label.col-form-label[for='id_photo5'] {
   width: 90px;
   height: 90px;
@@ -299,15 +292,15 @@ label.col-form-label[for='id_photo5'] {
   background-position-x: center;
   background-position-y: center;
   color: #ffe066 !important;
-  border:2px solid #ffe066;
+  border: 2px solid #ffe066;
   font-weight: bold;
   border-radius: 5px;
   padding: auto;
   font-size: 11px;
   text-align: center;
   cursor: pointer;
-  
 }
+
 label.col-form-label[for='id_photo6'] {
   width: 90px;
   height: 90px;
@@ -317,15 +310,15 @@ label.col-form-label[for='id_photo6'] {
   background-position-x: center;
   background-position-y: center;
   color: #ffe066 !important;
-  border:2px solid #ffe066;
+  border: 2px solid #ffe066;
   font-weight: bold;
   border-radius: 5px;
   padding: auto;
   font-size: 11px;
   text-align: center;
   cursor: pointer;
-  
 }
+
 label.col-form-label[for='id_photo7'] {
   width: 90px;
   height: 90px;
@@ -335,15 +328,15 @@ label.col-form-label[for='id_photo7'] {
   background-position-x: center;
   background-position-y: center;
   color: #ffe066 !important;
-  border:2px solid #ffe066;
+  border: 2px solid #ffe066;
   font-weight: bold;
   border-radius: 5px;
   padding: auto;
   font-size: 11px;
   text-align: center;
   cursor: pointer;
-  
 }
+
 label.col-form-label[for='id_photo8'] {
   width: 90px;
   height: 90px;
@@ -353,17 +346,16 @@ label.col-form-label[for='id_photo8'] {
   background-position-x: center;
   background-position-y: center;
   color: #ffe066 !important;
-  border:2px solid #ffe066;
+  border: 2px solid #ffe066;
   font-weight: bold;
   border-radius: 5px;
   padding: auto;
   font-size: 11px;
   text-align: center;
   cursor: pointer;
-  
 }
 
-input[type='file']{
+input[type='file'] {
   display: none;
 }
 
@@ -372,78 +364,106 @@ input[type='file']{
   position: relative;
   min-height: 650px;
   color: #fff;
-  padding-top: 6rem; }
-  #showcase .home-search {
-    min-height: 400px;
-    position: relative;
-    border-radius: 5px; }
-  #showcase .overlay {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-height: 400px;
-    width: 100%;
-    background: rgba(51, 51, 51, 0.8); }
+  padding-top: 6rem;
+}
+
+#showcase .home-search {
+  min-height: 400px;
+  position: relative;
+  border-radius: 5px;
+}
+
+#showcase .overlay {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 400px;
+  width: 100%;
+  background: rgba(51, 51, 51, 0.8);
+}
 
 #services {
   background: url(../img/building.jpg) no-repeat top center fixed/cover;
   min-height: 300px;
   position: relative;
-  overflow: hidden; }
-  #services::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-height: 100%;
-    width: 100%;
-    background: rgba(32, 134, 107, 0.8); }
+  overflow: hidden;
+}
+
+#services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  background: rgba(32, 134, 107, 0.8);
+}
 
 #showcase-inner {
   background: url(../img/building.jpg) no-repeat top center fixed/cover;
   position: relative;
   overflow: hidden;
-  min-height: 200px; }
-  #showcase-inner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-height: 100%;
-    width: 100%;
-    background: rgba(32, 134, 107, 0.8); }
-  #showcase-inner.showcase-search {
-    min-height: 270px; }
+  min-height: 200px;
+}
+
+#showcase-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  background: rgba(32, 134, 107, 0.8);
+}
+
+#showcase-inner.showcase-search {
+  min-height: 270px;
+}
 
 #work {
-  padding: 6rem 0; }
+  padding: 6rem 0;
+}
 
 .listing-preview a {
-  position: relative; }
+  position: relative;
+}
 
 @media (max-width: 991px) {
   #showcase {
-    padding-top: 4rem; }
-    #showcase h1 {
-      font-size: 40px; }
+    padding-top: 4rem;
+  }
+  #showcase h1 {
+    font-size: 40px;
+  }
   .hide-md-down {
-    display: none; } }
+    display: none;
+  }
+}
 
 @media (max-width: 768px) {
   #showcase {
-    padding-top: 3rem; }
-    #showcase h1 {
-      font-size: 40px; }
-    #showcase p {
-      display: none; }
+    padding-top: 3rem;
+  }
+  #showcase h1 {
+    font-size: 40px;
+  }
+  #showcase p {
+    display: none;
+  }
   #top-bar {
-    text-align: center; }
-    #top-bar .social {
-      text-align: center !important; } }
+    text-align: center;
+  }
+  #top-bar .social {
+    text-align: center !important;
+  }
+}
 
 @media (max-width: 576px) {
   #showcase h1 {
-    font-size: 30px; }
+    font-size: 30px;
+  }
   #showcase-inner h1 {
-    font-size: 40px; } }
+    font-size: 40px;
+  }
+}
